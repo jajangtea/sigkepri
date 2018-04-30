@@ -68,6 +68,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
             namaPerusahaanLabel1 = new System.Windows.Forms.Label();
             tlpLabel = new System.Windows.Forms.Label();
             alamatLabel = new System.Windows.Forms.Label();
@@ -76,6 +77,7 @@
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -198,6 +200,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.listView1);
             this.panel4.Location = new System.Drawing.Point(12, 77);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(401, 132);
@@ -487,7 +490,16 @@
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(401, 132);
             this.panel19.TabIndex = 35;
-           
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(399, 130);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // FormRekapitulasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,6 +528,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -574,5 +587,6 @@
         private System.Windows.Forms.Label alamatLabel1;
         private System.Windows.Forms.Label tlpLabel1;
         private System.Windows.Forms.Label namaPerusahaanLabel2;
+        private System.Windows.Forms.ListView listView1;
     }
 }
