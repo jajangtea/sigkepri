@@ -134,6 +134,12 @@
     <Compile Include="FormDokumen.Designer.cs">
       <DependentUpon>FormDokumen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDokumenPerusahaan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDokumenPerusahaan.Designer.cs">
+      <DependentUpon>FormDokumenPerusahaan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGreatMap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDokumen.resx">
       <DependentUpon>FormDokumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDokumenPerusahaan.resx">
+      <DependentUpon>FormDokumenPerusahaan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGreatMap.resx">
       <DependentUpon>FormGreatMap.cs</DependentUpon>
