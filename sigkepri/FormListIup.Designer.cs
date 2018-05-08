@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListIup));
             this.btnCari = new System.Windows.Forms.Button();
             this.komoditi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,22 +57,19 @@
             this.tglKadaluarsa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tglIzin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namaPerizinan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Label2 = new System.Windows.Forms.Label();
             this.Panel3 = new System.Windows.Forms.Panel();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.idWiup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namaPerusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noIzin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbCari = new System.Windows.Forms.Label();
+            this.LabelInfo = new System.Windows.Forms.Label();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Panel1 = new System.Windows.Forms.Panel();
             this.Panel4.SuspendLayout();
             this.Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
-            this.Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCari
@@ -92,8 +89,8 @@
             // komoditi
             // 
             this.komoditi.DataPropertyName = "namaBahanGalian";
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            this.komoditi.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.komoditi.DefaultCellStyle = dataGridViewCellStyle1;
             this.komoditi.HeaderText = "Komoditi";
             this.komoditi.Name = "komoditi";
             this.komoditi.ReadOnly = true;
@@ -101,8 +98,8 @@
             // luasWilayahPenunjang
             // 
             this.luasWilayahPenunjang.DataPropertyName = "luasWilayahPenunjang";
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            this.luasWilayahPenunjang.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.luasWilayahPenunjang.DefaultCellStyle = dataGridViewCellStyle2;
             this.luasWilayahPenunjang.HeaderText = "Luas Wil. Penunjang (ha)";
             this.luasWilayahPenunjang.Name = "luasWilayahPenunjang";
             this.luasWilayahPenunjang.ReadOnly = true;
@@ -111,8 +108,8 @@
             // luas
             // 
             this.luas.DataPropertyName = "luasWilayahTambang";
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            this.luas.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.luas.DefaultCellStyle = dataGridViewCellStyle3;
             this.luas.HeaderText = "Luas Wil. Tambang (ha)";
             this.luas.Name = "luas";
             this.luas.ReadOnly = true;
@@ -121,8 +118,8 @@
             // lokasi
             // 
             this.lokasi.DataPropertyName = "namaLokasi";
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            this.lokasi.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.lokasi.DefaultCellStyle = dataGridViewCellStyle4;
             this.lokasi.HeaderText = "Lokasi";
             this.lokasi.Name = "lokasi";
             this.lokasi.ReadOnly = true;
@@ -130,11 +127,11 @@
             // 
             // ubah
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            this.ubah.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            this.ubah.DefaultCellStyle = dataGridViewCellStyle5;
             this.ubah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ubah.HeaderText = "";
             this.ubah.Name = "ubah";
@@ -160,11 +157,11 @@
             // 
             // hapus
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            this.hapus.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            this.hapus.DefaultCellStyle = dataGridViewCellStyle6;
             this.hapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hapus.HeaderText = "";
             this.hapus.Name = "hapus";
@@ -245,9 +242,9 @@
             // tglKadaluarsa
             // 
             this.tglKadaluarsa.DataPropertyName = "tglKadaluwarsa";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            this.tglKadaluarsa.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.tglKadaluarsa.DefaultCellStyle = dataGridViewCellStyle7;
             this.tglKadaluarsa.HeaderText = "Tanggal Kadaluarsa";
             this.tglKadaluarsa.Name = "tglKadaluarsa";
             this.tglKadaluarsa.ReadOnly = true;
@@ -256,9 +253,9 @@
             // tglIzin
             // 
             this.tglIzin.DataPropertyName = "tglBerlaku";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            this.tglIzin.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.tglIzin.DefaultCellStyle = dataGridViewCellStyle8;
             this.tglIzin.HeaderText = "Tanggal Berlaku";
             this.tglIzin.Name = "tglIzin";
             this.tglIzin.ReadOnly = true;
@@ -268,23 +265,12 @@
             // 
             this.namaPerizinan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.namaPerizinan.DataPropertyName = "namaPerizinan";
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            this.namaPerizinan.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.namaPerizinan.DefaultCellStyle = dataGridViewCellStyle9;
             this.namaPerizinan.HeaderText = "Nama Perizinan";
             this.namaPerizinan.Name = "namaPerizinan";
             this.namaPerizinan.ReadOnly = true;
             this.namaPerizinan.Width = 97;
-            // 
-            // Label2
-            // 
-            this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.ForeColor = System.Drawing.Color.White;
-            this.Label2.Location = new System.Drawing.Point(34, 6);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(196, 25);
-            this.Label2.TabIndex = 27;
-            this.Label2.Text = "Input Data Perusahaan";
             // 
             // Panel3
             // 
@@ -294,7 +280,7 @@
             this.Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel3.Location = new System.Drawing.Point(0, 35);
             this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(1095, 452);
+            this.Panel3.Size = new System.Drawing.Size(1095, 488);
             this.Panel3.TabIndex = 34;
             // 
             // dgvList
@@ -321,14 +307,14 @@
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvList.Size = new System.Drawing.Size(1095, 413);
+            this.dgvList.Size = new System.Drawing.Size(1095, 449);
             this.dgvList.TabIndex = 30;
             // 
             // idWiup
             // 
             this.idWiup.DataPropertyName = "idIzinPerusahaan";
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            this.idWiup.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.idWiup.DefaultCellStyle = dataGridViewCellStyle10;
             this.idWiup.HeaderText = "idWiup";
             this.idWiup.Name = "idWiup";
             this.idWiup.ReadOnly = true;
@@ -337,8 +323,8 @@
             // namaPerusahaan
             // 
             this.namaPerusahaan.DataPropertyName = "namaPerusahaan";
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            this.namaPerusahaan.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.namaPerusahaan.DefaultCellStyle = dataGridViewCellStyle11;
             this.namaPerusahaan.HeaderText = "Nama Perusahaan";
             this.namaPerusahaan.Name = "namaPerusahaan";
             this.namaPerusahaan.ReadOnly = true;
@@ -347,29 +333,29 @@
             // noIzin
             // 
             this.noIzin.DataPropertyName = "nomorSK";
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            this.noIzin.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.noIzin.DefaultCellStyle = dataGridViewCellStyle12;
             this.noIzin.HeaderText = "Nomor SK";
             this.noIzin.Name = "noIzin";
             this.noIzin.ReadOnly = true;
             this.noIzin.Width = 150;
             // 
-            // lbCari
+            // LabelInfo
             // 
-            this.lbCari.AutoSize = true;
-            this.lbCari.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F);
-            this.lbCari.ForeColor = System.Drawing.Color.White;
-            this.lbCari.Location = new System.Drawing.Point(30, 5);
-            this.lbCari.Name = "lbCari";
-            this.lbCari.Size = new System.Drawing.Size(36, 25);
-            this.lbCari.TabIndex = 0;
-            this.lbCari.Text = "---";
+            this.LabelInfo.AutoSize = true;
+            this.LabelInfo.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F);
+            this.LabelInfo.ForeColor = System.Drawing.Color.White;
+            this.LabelInfo.Location = new System.Drawing.Point(30, 5);
+            this.LabelInfo.Name = "LabelInfo";
+            this.LabelInfo.Size = new System.Drawing.Size(36, 25);
+            this.LabelInfo.TabIndex = 0;
+            this.LabelInfo.Text = "---";
             // 
             // Panel2
             // 
             this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(104)))), ((int)(((byte)(116)))));
             this.Panel2.Controls.Add(this.PictureBox1);
-            this.Panel2.Controls.Add(this.lbCari);
+            this.Panel2.Controls.Add(this.LabelInfo);
             this.Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel2.Location = new System.Drawing.Point(0, 0);
             this.Panel2.Name = "Panel2";
@@ -387,16 +373,6 @@
             this.PictureBox1.TabIndex = 1;
             this.PictureBox1.TabStop = false;
             // 
-            // Panel1
-            // 
-            this.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(104)))), ((int)(((byte)(116)))));
-            this.Panel1.Controls.Add(this.Label2);
-            this.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Panel1.Location = new System.Drawing.Point(0, 487);
-            this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(1095, 36);
-            this.Panel1.TabIndex = 33;
-            // 
             // FormListIup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,13 +381,13 @@
             this.ClientSize = new System.Drawing.Size(1095, 523);
             this.Controls.Add(this.Panel3);
             this.Controls.Add(this.Panel2);
-            this.Controls.Add(this.Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "FormListIup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormListIup";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormListIup_Load);
             this.Panel4.ResumeLayout(false);
             this.Panel4.PerformLayout();
             this.Panel3.ResumeLayout(false);
@@ -419,8 +395,6 @@
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
-            this.Panel1.ResumeLayout(false);
-            this.Panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -443,15 +417,13 @@
         internal System.Windows.Forms.DataGridViewTextBoxColumn tglIzin;
         internal System.Windows.Forms.DataGridViewTextBoxColumn namaPerizinan;
         internal System.Windows.Forms.PictureBox PictureBox1;
-        internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Panel Panel3;
         internal System.Windows.Forms.DataGridView dgvList;
         internal System.Windows.Forms.DataGridViewTextBoxColumn idWiup;
         internal System.Windows.Forms.DataGridViewTextBoxColumn namaPerusahaan;
         internal System.Windows.Forms.DataGridViewTextBoxColumn noIzin;
-        internal System.Windows.Forms.Label lbCari;
+        internal System.Windows.Forms.Label LabelInfo;
         internal System.Windows.Forms.Panel Panel2;
-        internal System.Windows.Forms.Panel Panel1;
         internal System.Windows.Forms.Button btnTutup;
     }
 }

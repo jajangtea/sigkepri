@@ -34,46 +34,40 @@ namespace sigkepri
             comboBoxMode.SelectedItem = gmap.Manager.Mode;
         }
 
+        public void tampilPenanda()
+        {
+            GMapOverlay markersOverlay = new GMapOverlay("markers");
+            List<PointLatLng> points = new List<PointLatLng>();
+            List<string>[] list;
+            list = dbConnect.selectPenanda();
+            for (int i = 0; i < list[0].Count; i++)
+            {
+                GMapMarker marker = new GMarkerGoogle(new PointLatLng(Convert.ToDouble(list[1][i]), Convert.ToDouble(list[2][i])), new Bitmap(Properties.Resources.Marker_16px));
+                points.Add(new PointLatLng(Convert.ToDouble(list[1][i]), Convert.ToDouble(list[2][i])));
+                marker.ToolTipText = list[0][i];
+                marker.ToolTip.Fill = Brushes.Crimson;
+                marker.ToolTip.Foreground = Brushes.White;
+                marker.ToolTip.Stroke = Pens.Crimson;
+                marker.ToolTip.TextPadding = new Size(20, 20);
+                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                markersOverlay.Markers.Add(marker);
+                gmap.Overlays.Add(markersOverlay);
+            }
+        }
+
         private void FormGreatMap_Load(object sender, EventArgs e)
         {
             gmap.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
-            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
-            gmap.Position = new PointLatLng(1.1773530, 103.9250000);
-
-            GMapOverlay markersOverlay = new GMapOverlay("markers");
-            GMapMarker marker = new GMarkerGoogle(new PointLatLng(1.1773530, 103.9250000),new Bitmap(Properties.Resources.Home_30px));
-            marker.ToolTipText = "PT.Angin Ribut";
-            marker.ToolTip.Fill = Brushes.Crimson;
-            marker.ToolTip.Foreground = Brushes.White;
-            marker.ToolTip.Stroke = Pens.Crimson;
-            marker.ToolTip.TextPadding = new Size(20, 20);
-            marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
-            ///  GMarkerGoogle marker = new GMapMarker(new PointLatLng(1.1773530, 103.9250000), GMarkerGoogleType.green);
-            markersOverlay.Markers.Add(marker);
-            gmap.Overlays.Add(markersOverlay);
-            GMapOverlay polyOverlay = new GMapOverlay("polygons");
-            List<PointLatLng> points = new List<PointLatLng>();
-            List<string>[] list;
-            list = dbConnect.SelectLokasiDetil();
-
-            for (int i = 0; i < list[0].Count; i++)
-            {
-                Debug.Print(list[0][i]);
-                points.Add(new PointLatLng(Convert.ToDouble( list[0][i]), Convert.ToDouble(list[1][i])));
-            }
-
-            GMapPolygon polygon = new GMapPolygon(points, "mypolygon");
-            polygon.Fill = new SolidBrush(Color.FromArgb(50, Color.Red));
-            polygon.Stroke = new Pen(Color.Red, 1);
-            polyOverlay.Polygons.Add(polygon);
-            gmap.Overlays.Add(polyOverlay);
+            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
+            gmap.Position = new PointLatLng(1.082828, 104.030457);
+            tampilPenanda();
 
         }
         private void gmap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
         {
-            Console.WriteLine(String.Format("Marker {0} was clicked.", item.Tag));
-           // FormInfoLokasi fl = new FormInfoLokasi();
-          //  fl.ShowDialog();
+            //Console.WriteLine(String.Format("Marker {0} was clicked.", item.Tag));
+           //FormInfoLokasi fl = new FormInfoLokasi();
+          //fl.ShowDialog();
         }
 
         private void comboBoxMode_SelectedIndexChanged(object sender, EventArgs e)

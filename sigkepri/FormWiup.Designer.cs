@@ -34,17 +34,17 @@
             this.txtLuas = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.NoIzinTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bdKomoditi = new System.Windows.Forms.ComboBox();
-            this.bdLokasi = new System.Windows.Forms.ComboBox();
+            this.cbbLokasi = new System.Windows.Forms.ComboBox();
             this.Label3 = new System.Windows.Forms.Label();
             this.Label7 = new System.Windows.Forms.Label();
-            this.bdPerusahaan = new System.Windows.Forms.ComboBox();
             this.Label5 = new System.Windows.Forms.Label();
-            this.Label4 = new System.Windows.Forms.Label();
             this.btnSimpan = new System.Windows.Forms.Button();
             this.Label2 = new System.Windows.Forms.Label();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.Label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbPerusahaan = new System.Windows.Forms.ComboBox();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +103,7 @@
             this.NoIzinTextBox.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(104)))), ((int)(((byte)(116)))));
             this.NoIzinTextBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(104)))), ((int)(((byte)(116)))));
             this.NoIzinTextBox.LineThickness = 2;
-            this.NoIzinTextBox.Location = new System.Drawing.Point(231, 93);
+            this.NoIzinTextBox.Location = new System.Drawing.Point(231, 92);
             this.NoIzinTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NoIzinTextBox.Name = "NoIzinTextBox";
             this.NoIzinTextBox.Size = new System.Drawing.Size(485, 33);
@@ -121,16 +121,16 @@
             this.bdKomoditi.Size = new System.Drawing.Size(485, 28);
             this.bdKomoditi.TabIndex = 39;
             // 
-            // bdLokasi
+            // cbbLokasi
             // 
-            this.bdLokasi.BackColor = System.Drawing.Color.White;
-            this.bdLokasi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bdLokasi.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdLokasi.FormattingEnabled = true;
-            this.bdLokasi.Location = new System.Drawing.Point(231, 216);
-            this.bdLokasi.Name = "bdLokasi";
-            this.bdLokasi.Size = new System.Drawing.Size(485, 28);
-            this.bdLokasi.TabIndex = 40;
+            this.cbbLokasi.BackColor = System.Drawing.Color.White;
+            this.cbbLokasi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbLokasi.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbLokasi.FormattingEnabled = true;
+            this.cbbLokasi.Location = new System.Drawing.Point(231, 216);
+            this.cbbLokasi.Name = "cbbLokasi";
+            this.cbbLokasi.Size = new System.Drawing.Size(485, 28);
+            this.cbbLokasi.TabIndex = 40;
             // 
             // Label3
             // 
@@ -152,17 +152,6 @@
             this.Label7.TabIndex = 35;
             this.Label7.Text = "Komoditi";
             // 
-            // bdPerusahaan
-            // 
-            this.bdPerusahaan.BackColor = System.Drawing.Color.White;
-            this.bdPerusahaan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bdPerusahaan.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdPerusahaan.FormattingEnabled = true;
-            this.bdPerusahaan.Location = new System.Drawing.Point(231, 60);
-            this.bdPerusahaan.Name = "bdPerusahaan";
-            this.bdPerusahaan.Size = new System.Drawing.Size(485, 28);
-            this.bdPerusahaan.TabIndex = 38;
-            // 
             // Label5
             // 
             this.Label5.AutoSize = true;
@@ -172,16 +161,6 @@
             this.Label5.Size = new System.Drawing.Size(45, 17);
             this.Label5.TabIndex = 36;
             this.Label5.Text = "Lokasi ";
-            // 
-            // Label4
-            // 
-            this.Label4.AutoSize = true;
-            this.Label4.Font = new System.Drawing.Font("Segoe UI Light", 9.75F);
-            this.Label4.Location = new System.Drawing.Point(231, 38);
-            this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(73, 17);
-            this.Label4.TabIndex = 37;
-            this.Label4.Text = "Perusahaan ";
             // 
             // btnSimpan
             // 
@@ -196,6 +175,7 @@
             this.btnSimpan.TabIndex = 32;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = false;
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
             // Label2
             // 
@@ -241,6 +221,27 @@
             this.Label1.TabIndex = 33;
             this.Label1.Text = "Input Data WIUP";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 9.75F);
+            this.label4.Location = new System.Drawing.Point(234, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Perusahaan";
+            // 
+            // cbPerusahaan
+            // 
+            this.cbPerusahaan.BackColor = System.Drawing.Color.White;
+            this.cbPerusahaan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPerusahaan.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPerusahaan.FormattingEnabled = true;
+            this.cbPerusahaan.Location = new System.Drawing.Point(231, 60);
+            this.cbPerusahaan.Name = "cbPerusahaan";
+            this.cbPerusahaan.Size = new System.Drawing.Size(485, 28);
+            this.cbPerusahaan.TabIndex = 40;
+            // 
             // FormWiup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,11 +253,11 @@
             this.Controls.Add(this.txtLuas);
             this.Controls.Add(this.NoIzinTextBox);
             this.Controls.Add(this.bdKomoditi);
-            this.Controls.Add(this.bdLokasi);
+            this.Controls.Add(this.cbPerusahaan);
+            this.Controls.Add(this.cbbLokasi);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.Label7);
-            this.Controls.Add(this.bdPerusahaan);
             this.Controls.Add(this.Label5);
-            this.Controls.Add(this.Label4);
             this.Controls.Add(this.btnSimpan);
             this.Controls.Add(this.Panel1);
             this.Controls.Add(this.Label1);
@@ -264,6 +265,7 @@
             this.Name = "FormWiup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormWiup";
+            this.Load += new System.EventHandler(this.FormWiup_Load);
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
@@ -279,16 +281,16 @@
         internal Bunifu.Framework.UI.BunifuMaterialTextbox txtLuas;
         internal Bunifu.Framework.UI.BunifuMaterialTextbox NoIzinTextBox;
         internal System.Windows.Forms.ComboBox bdKomoditi;
-        internal System.Windows.Forms.ComboBox bdLokasi;
+        internal System.Windows.Forms.ComboBox cbbLokasi;
         internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Label Label7;
-        internal System.Windows.Forms.ComboBox bdPerusahaan;
         internal System.Windows.Forms.Label Label5;
-        internal System.Windows.Forms.Label Label4;
         internal System.Windows.Forms.Button btnSimpan;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Panel Panel1;
         internal System.Windows.Forms.PictureBox PictureBox1;
         internal System.Windows.Forms.Label Label1;
+        internal System.Windows.Forms.Label label4;
+        internal System.Windows.Forms.ComboBox cbPerusahaan;
     }
 }

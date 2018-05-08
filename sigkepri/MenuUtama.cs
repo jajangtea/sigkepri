@@ -240,14 +240,14 @@ namespace sigkepri
             {
                 childForm.Close();
             }
-            FormListWiup fp = new FormListWiup();
-            fp.TopLevel = false;
-            SplitContainer1.Panel2.Controls.Add(fp);
+            FormListWiup fp = new FormListWiup(this);
+           // fp.TopLevel = false;
+           // SplitContainer1.Panel2.Controls.Add(fp);
             fp.Show();
-            fp.Label1.Text = "Pencarian Data WIUP";
+           // fp.Label1.Text = "Pencarian Data WIUP";
            // fp.Label1.Text = "1";
            // fp.tampilGrid();
-            fp.BringToFront();
+           // fp.BringToFront();
         }
 
         private void Button9_Click(object sender, EventArgs e)
@@ -256,7 +256,7 @@ namespace sigkepri
             fp.TopLevel = false;
             SplitContainer1.Panel2.Controls.Add(fp);
             fp.Show();
-            fp.lbCari.Text = "Pencarian Data IUP Operasi";
+            fp.LabelInfo.Text = "Pencarian Data IUP Operasi";
             // fp.Label1.Text = "1";
             // fp.tampilGrid();
             fp.BringToFront();
@@ -268,7 +268,7 @@ namespace sigkepri
             fp.TopLevel = false;
             SplitContainer1.Panel2.Controls.Add(fp);
             fp.Show();
-            fp.lbCari.Text = "Pencarian Data IUP";
+            fp.LabelInfo.Text = "Pencarian Data IUP";
             // fp.Label1.Text = "1";
             // fp.tampilGrid();
             fp.BringToFront();
@@ -278,7 +278,7 @@ namespace sigkepri
 
         private void btWiup_Click(object sender, EventArgs e)
         {
-            FormListWiup fp = new FormListWiup();
+            FormListWiup fp = new FormListWiup(this);
             fp.TopLevel = false;
             SplitContainer1.Panel2.Controls.Add(fp);
             fp.Show();
@@ -299,7 +299,7 @@ namespace sigkepri
             fp.TopLevel = false;
             SplitContainer1.Panel2.Controls.Add(fp);
             fp.Show();
-            fp.lbCari.Text = "Pencarian Data IUP Ekplorasi";
+            fp.LabelInfo.Text = "Pencarian Data IUP Ekplorasi";
             // fp.Label1.Text = "1";
             // fp.tampilGrid();
             fp.BringToFront();
@@ -316,7 +316,7 @@ namespace sigkepri
             fp.TopLevel = false;
             SplitContainer1.Panel2.Controls.Add(fp);
             fp.Show();
-            fp.lbCari.Text = "Pencarian Data IUP Operasi Produksi";
+            fp.LabelInfo.Text = "Pencarian Data IUP Operasi Produksi";
             // fp.Label1.Text = "1";
             // fp.tampilGrid();
             fp.BringToFront();
@@ -333,7 +333,7 @@ namespace sigkepri
             fp.TopLevel = false;
             SplitContainer1.Panel2.Controls.Add(fp);
             fp.Show();
-            fp.lbCari.Text = "Pencarian Data IUP IPR";
+            fp.LabelInfo.Text = "Pencarian Data IUP IPR";
             // fp.Label1.Text = "1";
             // fp.tampilGrid();
             fp.BringToFront();

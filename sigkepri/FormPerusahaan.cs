@@ -18,7 +18,12 @@ namespace sigkepri
         public FormPerusahaan()
         {
             InitializeComponent();
-             dbConnect = new DBConnect();
+            dbConnect = new DBConnect();
+            backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
+            backgroundWorker1.RunWorkerCompleted += new RunWorkerCompletedEventHandler(backgroundWorker1_RunWorkerCompleted);
+            backgroundWorker1.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker1_ProgressChanged);
+            backgroundWorker1.WorkerReportsProgress = true;
+            backgroundWorker1.WorkerSupportsCancellation = true;
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
@@ -38,7 +43,14 @@ namespace sigkepri
 
         private void FormPerusahaan_Load(object sender, EventArgs e)
         {
-            dbConnect.tampilData(dgvList, "select * from esdm_perusahaan");
+
+            if (!backgroundWorker1.IsBusy)//Check if the worker is already in progress
+            {
+                backgroundWorker1.RunWorkerAsync();//Call the background worker
+                Control.CheckForIllegalCrossThreadCalls = false;
+            }
+
+       
         }
 
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -113,6 +125,72 @@ namespace sigkepri
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             dbConnect.tampilData(dgvList, "select * from esdm_perusahaan");
+        }
+
+        private void txtCari_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                dbConnect.OpenConnection();
+                dbConnect.cmd = new MySqlCommand("select * from esdm_perusahaan", dbConnect.connection);
+                dbConnect.tampil = new MySqlDataAdapter(dbConnect.cmd);
+                dbConnect.ds.Clear();
+                dbConnect.tampil.Fill(dbConnect.ds);
+                e.Result= dbConnect.ds.Tables[0];
+                dbConnect.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void panggil(DataGridView dg,string sql)
+        {
+
+        }
+
+        private void FormPerusahaan_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(backgroundWorker1 .IsBusy)
+            {
+                backgroundWorker1.CancelAsync();
+                while (backgroundWorker1.IsBusy)
+                {
+                    Application.DoEvents();
+                }
+            }
+            
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (!e.Cancelled && e.Error == null)//Check if the worker has been cancelled or if an error occured
+            {
+              //  string result = (string)e.Result;//Get the result from the background thread
+                dgvList.DataSource = e.Result;//result;//Display the result to the user
+                lblStatus.Text = "Done";
+            }
+            else if (e.Cancelled)
+            {
+                lblStatus.Text = "User Cancelled";
+            }
+            else
+            {
+                lblStatus.Text = "An error has occured";
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            lblStatus.Text = string.Format("Counting number: {0}...", e.ProgressPercentage);
+
         }
     }
 }

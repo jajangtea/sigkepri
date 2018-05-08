@@ -36,15 +36,14 @@
             this.innerPanel1 = new System.Windows.Forms.Panel();
             this.xPander7 = new XPanderControl.XPander();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbtnRekapitulasi = new System.Windows.Forms.Label();
             this.xPander8 = new XPanderControl.XPander();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbOffline = new System.Windows.Forms.Label();
+            this.lbOnline = new System.Windows.Forms.Label();
             this.xPander9 = new XPanderControl.XPander();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lbiupipr = new System.Windows.Forms.Label();
+            this.lbiupe = new System.Windows.Forms.Label();
+            this.lbiupep = new System.Windows.Forms.Label();
+            this.lbtnWiup = new System.Windows.Forms.Label();
             this.xPander10 = new XPanderControl.XPander();
             this.label15 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -53,7 +52,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lbJaminan = new System.Windows.Forms.Label();
             this.lbtnPerusahaan = new System.Windows.Forms.Label();
             this.xPander6 = new XPanderControl.XPander();
             this.label3 = new System.Windows.Forms.Label();
@@ -159,7 +158,6 @@
             this.xPander7.CollapsedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander7.CollapsedHighlightImage")));
             this.xPander7.CollapsedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander7.CollapsedImage")));
             this.xPander7.Controls.Add(this.label5);
-            this.xPander7.Controls.Add(this.lbtnRekapitulasi);
             this.xPander7.Dock = System.Windows.Forms.DockStyle.Top;
             this.xPander7.ExpandedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander7.ExpandedHighlightImage")));
             this.xPander7.ExpandedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander7.ExpandedImage")));
@@ -180,27 +178,13 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(17, 74);
+            this.label5.Location = new System.Drawing.Point(17, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 23);
             this.label5.TabIndex = 1;
-            this.label5.Text = "      Home";
+            this.label5.Text = "      Rekap";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbtnRekapitulasi
-            // 
-            this.lbtnRekapitulasi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbtnRekapitulasi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtnRekapitulasi.ForeColor = System.Drawing.Color.White;
-            this.lbtnRekapitulasi.Image = ((System.Drawing.Image)(resources.GetObject("lbtnRekapitulasi.Image")));
-            this.lbtnRekapitulasi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbtnRekapitulasi.Location = new System.Drawing.Point(17, 41);
-            this.lbtnRekapitulasi.Name = "lbtnRekapitulasi";
-            this.lbtnRekapitulasi.Size = new System.Drawing.Size(108, 23);
-            this.lbtnRekapitulasi.TabIndex = 0;
-            this.lbtnRekapitulasi.Text = "      Rekapitulasi";
-            this.lbtnRekapitulasi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbtnRekapitulasi.Click += new System.EventHandler(this.lbtnRekapitulasi_Click);
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // xPander8
             // 
@@ -218,8 +202,8 @@
             this.xPander8.ChevronStyle = XPanderControl.XPander.ChevronStyleEnum.Image;
             this.xPander8.CollapsedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander8.CollapsedHighlightImage")));
             this.xPander8.CollapsedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander8.CollapsedImage")));
-            this.xPander8.Controls.Add(this.label9);
-            this.xPander8.Controls.Add(this.label10);
+            this.xPander8.Controls.Add(this.lbOffline);
+            this.xPander8.Controls.Add(this.lbOnline);
             this.xPander8.Dock = System.Windows.Forms.DockStyle.Top;
             this.xPander8.ExpandedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander8.ExpandedHighlightImage")));
             this.xPander8.ExpandedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander8.ExpandedImage")));
@@ -233,33 +217,34 @@
             this.xPander8.TabIndex = 27;
             this.xPander8.TooltipText = null;
             // 
-            // label9
+            // lbOffline
             // 
-            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label9.Location = new System.Drawing.Point(17, 80);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 23);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Home";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbOffline.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbOffline.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOffline.ForeColor = System.Drawing.Color.White;
+            this.lbOffline.Image = ((System.Drawing.Image)(resources.GetObject("lbOffline.Image")));
+            this.lbOffline.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbOffline.Location = new System.Drawing.Point(17, 80);
+            this.lbOffline.Name = "lbOffline";
+            this.lbOffline.Size = new System.Drawing.Size(108, 23);
+            this.lbOffline.TabIndex = 1;
+            this.lbOffline.Text = "Offline";
+            this.lbOffline.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // lbOnline
             // 
-            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(17, 47);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(108, 23);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Home";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbOnline.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbOnline.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOnline.ForeColor = System.Drawing.Color.White;
+            this.lbOnline.Image = ((System.Drawing.Image)(resources.GetObject("lbOnline.Image")));
+            this.lbOnline.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbOnline.Location = new System.Drawing.Point(17, 47);
+            this.lbOnline.Name = "lbOnline";
+            this.lbOnline.Size = new System.Drawing.Size(108, 23);
+            this.lbOnline.TabIndex = 0;
+            this.lbOnline.Text = "Online";
+            this.lbOnline.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbOnline.Click += new System.EventHandler(this.lbOnline_Click);
             // 
             // xPander9
             // 
@@ -277,10 +262,10 @@
             this.xPander9.ChevronStyle = XPanderControl.XPander.ChevronStyleEnum.Image;
             this.xPander9.CollapsedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander9.CollapsedHighlightImage")));
             this.xPander9.CollapsedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander9.CollapsedImage")));
-            this.xPander9.Controls.Add(this.label11);
-            this.xPander9.Controls.Add(this.label12);
-            this.xPander9.Controls.Add(this.label13);
-            this.xPander9.Controls.Add(this.label14);
+            this.xPander9.Controls.Add(this.lbiupipr);
+            this.xPander9.Controls.Add(this.lbiupe);
+            this.xPander9.Controls.Add(this.lbiupep);
+            this.xPander9.Controls.Add(this.lbtnWiup);
             this.xPander9.Dock = System.Windows.Forms.DockStyle.Top;
             this.xPander9.ExpandedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander9.ExpandedHighlightImage")));
             this.xPander9.ExpandedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander9.ExpandedImage")));
@@ -294,61 +279,65 @@
             this.xPander9.TabIndex = 26;
             this.xPander9.TooltipText = null;
             // 
-            // label11
+            // lbiupipr
             // 
-            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Image = ((System.Drawing.Image)(resources.GetObject("label11.Image")));
-            this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label11.Location = new System.Drawing.Point(17, 127);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 23);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "      IUP IPR";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbiupipr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbiupipr.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbiupipr.ForeColor = System.Drawing.Color.White;
+            this.lbiupipr.Image = ((System.Drawing.Image)(resources.GetObject("lbiupipr.Image")));
+            this.lbiupipr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbiupipr.Location = new System.Drawing.Point(17, 127);
+            this.lbiupipr.Name = "lbiupipr";
+            this.lbiupipr.Size = new System.Drawing.Size(108, 23);
+            this.lbiupipr.TabIndex = 1;
+            this.lbiupipr.Text = "      IUP IPR";
+            this.lbiupipr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbiupipr.Click += new System.EventHandler(this.lbiupipr_Click);
             // 
-            // label12
+            // lbiupe
             // 
-            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Image = ((System.Drawing.Image)(resources.GetObject("label12.Image")));
-            this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label12.Location = new System.Drawing.Point(17, 69);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(142, 23);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "      IUP Eksplorasi";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbiupe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbiupe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbiupe.ForeColor = System.Drawing.Color.White;
+            this.lbiupe.Image = ((System.Drawing.Image)(resources.GetObject("lbiupe.Image")));
+            this.lbiupe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbiupe.Location = new System.Drawing.Point(17, 69);
+            this.lbiupe.Name = "lbiupe";
+            this.lbiupe.Size = new System.Drawing.Size(142, 23);
+            this.lbiupe.TabIndex = 1;
+            this.lbiupe.Text = "      IUP Eksplorasi";
+            this.lbiupe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbiupe.Click += new System.EventHandler(this.lbiupe_Click);
             // 
-            // label13
+            // lbiupep
             // 
-            this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Image = ((System.Drawing.Image)(resources.GetObject("label13.Image")));
-            this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label13.Location = new System.Drawing.Point(17, 98);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(173, 23);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "      IUP Operasi Produksi";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbiupep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbiupep.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbiupep.ForeColor = System.Drawing.Color.White;
+            this.lbiupep.Image = ((System.Drawing.Image)(resources.GetObject("lbiupep.Image")));
+            this.lbiupep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbiupep.Location = new System.Drawing.Point(17, 98);
+            this.lbiupep.Name = "lbiupep";
+            this.lbiupep.Size = new System.Drawing.Size(173, 23);
+            this.lbiupep.TabIndex = 0;
+            this.lbiupep.Text = "      IUP Operasi Produksi";
+            this.lbiupep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbiupep.Click += new System.EventHandler(this.lbiupep_Click);
             // 
-            // label14
+            // lbtnWiup
             // 
-            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
-            this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label14.Location = new System.Drawing.Point(17, 40);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(108, 23);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "      WIUP";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbtnWiup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbtnWiup.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtnWiup.ForeColor = System.Drawing.Color.White;
+            this.lbtnWiup.Image = ((System.Drawing.Image)(resources.GetObject("lbtnWiup.Image")));
+            this.lbtnWiup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbtnWiup.Location = new System.Drawing.Point(17, 40);
+            this.lbtnWiup.Name = "lbtnWiup";
+            this.lbtnWiup.Size = new System.Drawing.Size(108, 23);
+            this.lbtnWiup.TabIndex = 0;
+            this.lbtnWiup.Text = "      WIUP";
+            this.lbtnWiup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbtnWiup.Click += new System.EventHandler(this.lbtnWiup_Click);
             // 
             // xPander10
             // 
@@ -373,7 +362,7 @@
             this.xPander10.Controls.Add(this.label21);
             this.xPander10.Controls.Add(this.label22);
             this.xPander10.Controls.Add(this.label23);
-            this.xPander10.Controls.Add(this.label24);
+            this.xPander10.Controls.Add(this.lbJaminan);
             this.xPander10.Controls.Add(this.lbtnPerusahaan);
             this.xPander10.Dock = System.Windows.Forms.DockStyle.Top;
             this.xPander10.ExpandedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander10.ExpandedHighlightImage")));
@@ -486,19 +475,20 @@
             this.label23.Text = "      Jenis";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label24
+            // lbJaminan
             // 
-            this.label24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Image = ((System.Drawing.Image)(resources.GetObject("label24.Image")));
-            this.label24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label24.Location = new System.Drawing.Point(19, 67);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(105, 23);
-            this.label24.TabIndex = 3;
-            this.label24.Text = "      Jaminan";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbJaminan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbJaminan.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbJaminan.ForeColor = System.Drawing.Color.White;
+            this.lbJaminan.Image = ((System.Drawing.Image)(resources.GetObject("lbJaminan.Image")));
+            this.lbJaminan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbJaminan.Location = new System.Drawing.Point(19, 67);
+            this.lbJaminan.Name = "lbJaminan";
+            this.lbJaminan.Size = new System.Drawing.Size(105, 23);
+            this.lbJaminan.TabIndex = 3;
+            this.lbJaminan.Text = "      Jaminan";
+            this.lbJaminan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbJaminan.Click += new System.EventHandler(this.lbJaminan_Click);
             // 
             // lbtnPerusahaan
             // 
@@ -627,15 +617,14 @@
         internal System.Windows.Forms.Panel innerPanel1;
         private XPanderControl.XPander xPander7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbtnRekapitulasi;
         private XPanderControl.XPander xPander8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbOffline;
+        private System.Windows.Forms.Label lbOnline;
         private XPanderControl.XPander xPander9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbiupipr;
+        private System.Windows.Forms.Label lbiupe;
+        private System.Windows.Forms.Label lbiupep;
+        private System.Windows.Forms.Label lbtnWiup;
         private XPanderControl.XPander xPander10;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label18;
@@ -644,7 +633,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lbJaminan;
         private System.Windows.Forms.Label lbtnPerusahaan;
         private XPanderControl.XPander xPander6;
         private System.Windows.Forms.Label label3;

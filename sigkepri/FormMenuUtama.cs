@@ -11,28 +11,15 @@ namespace sigkepri
 {
     public partial class FormMenuUtama : Form
     {
-      
+
         public FormMenuUtama()
         {
             InitializeComponent();
-            // outerPanel1.Width -= 20;
-            // customScrollbar2.Left -= 20;
-            //pt = new Point(this.innerPanel1.AutoScrollPosition.X, this.innerPanel1.AutoScrollPosition.Y);
-            //this.customScrollbar2.Minimum = 0;
-            //this.customScrollbar2.Maximum = this.innerPanel1.DisplayRectangle.Height;
-            //this.customScrollbar2.LargeChange = customScrollbar2.Maximum / customScrollbar2.Height + this.innerPanel1.Height;
-            //this.customScrollbar2.SmallChange = 15;
-            //this.customScrollbar2.Value = Math.Abs(this.innerPanel1.AutoScrollPosition.Y);
         }
 
         private void FormMenuUtama_Load(object sender, EventArgs e)
         {
-
-            //   xPander2.Collapse();
-            // xPander3.Collapse();
-            // xPander4.Collapse();
-            // xPander5.Collapse();
-
+            xPander10.Collapse();
             FormDashboard fp = new FormDashboard();
             fp.TopLevel = false;
             SplitContainer1.Panel2.Controls.Add(fp);
@@ -90,21 +77,7 @@ namespace sigkepri
             fp.ShowDialog();
         }
 
-        private void lbtnWiup_Click(object sender, EventArgs e)
-        {
-            foreach (Form childForm in this.SplitContainer1.Panel2.Controls)
-            {
-                childForm.Close();
-            }
-            FormListWiup fp = new FormListWiup();
-            fp.TopLevel = false;
-            SplitContainer1.Panel2.Controls.Add(fp);
-            fp.Show();
-            fp.Label1.Text = "Pencarian Data WIUP";
-            // fp.Label1.Text = "1";
-            // fp.tampilGrid();
-            fp.BringToFront();
-        }
+
 
         private void lbtnIupEp_Click(object sender, EventArgs e)
         {
@@ -117,7 +90,7 @@ namespace sigkepri
             fp.TopLevel = false;
             SplitContainer1.Panel2.Controls.Add(fp);
             fp.Show();
-            fp.lbCari.Text = "Pencarian Data IUP Ekplorasi";
+            fp.LabelInfo.Text = "Pencarian Data IUP Ekplorasi";
             // fp.Label1.Text = "1";
             // fp.tampilGrid();
             fp.BringToFront();
@@ -134,7 +107,7 @@ namespace sigkepri
             fp.TopLevel = false;
             SplitContainer1.Panel2.Controls.Add(fp);
             fp.Show();
-            fp.lbCari.Text = "Pencarian Data IUP Operasi Produksi";
+            fp.LabelInfo.Text = "Pencarian Data IUP Operasi Produksi";
             // fp.Label1.Text = "1";
             // fp.tampilGrid();
             fp.BringToFront();
@@ -151,7 +124,7 @@ namespace sigkepri
             fp.TopLevel = false;
             SplitContainer1.Panel2.Controls.Add(fp);
             fp.Show();
-            fp.lbCari.Text = "Pencarian Data IUP IPR";
+            fp.LabelInfo.Text = "Pencarian Data IUP IPR";
             // fp.Label1.Text = "1";
             // fp.tampilGrid();
             fp.BringToFront();
@@ -163,10 +136,74 @@ namespace sigkepri
             fp.ShowDialog();
         }
 
-        private void lbtnRekapitulasi_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
-            FormRekapitulasi fr = new FormRekapitulasi();
-            fr.ShowDialog();
+            FormRekap fp = new FormRekap();
+            fp.TopLevel = false;
+            SplitContainer1.Panel2.Controls.Add(fp);
+            fp.Show();
+            fp.BringToFront();
+        }
+
+        private void lbOnline_Click(object sender, EventArgs e)
+        {
+            FormGreatMap fg = new FormGreatMap();
+            fg.Show();
+        }
+
+        private void lbJaminan_Click(object sender, EventArgs e)
+        {
+            FormJaminan fj = new FormJaminan();
+            fj.ShowDialog();
+        }
+
+        private void lbtnWiup_Click(object sender, EventArgs e)
+        {
+
+            FormListWiup fp = new FormListWiup(this);
+            fp.TopLevel = false;
+            SplitContainer1.Panel2.Controls.Add(fp);
+            fp.Show();
+            fp.Label1.Text = "Pencarian Data WIUP";
+            fp.Label1.Text = "1";
+           // fp.tampilGrid();
+            fp.BringToFront();
+        }
+
+        private void lbiupe_Click(object sender, EventArgs e)
+        {
+            FormListIup fp = new FormListIup();
+            fp.TopLevel = false;
+            SplitContainer1.Panel2.Controls.Add(fp);
+            fp.Show();
+            fp.LabelInfo.Text = "Pencarian Data IUP Eplorasi";
+            //fp.LabelInfo.Text = "1";
+            // fp.tampilGrid();
+            fp.BringToFront();
+        }
+
+        private void lbiupep_Click(object sender, EventArgs e)
+        {
+            FormListIup fp = new FormListIup();
+            fp.TopLevel = false;
+            SplitContainer1.Panel2.Controls.Add(fp);
+            fp.Show();
+            fp.LabelInfo.Text = "Pencarian Data IUP Ekplorasi Produksi";
+            //fp.LabelInfo.Text = "1";
+            // fp.tampilGrid();
+            fp.BringToFront();
+        }
+
+        private void lbiupipr_Click(object sender, EventArgs e)
+        {
+            FormListIup fp = new FormListIup();
+            fp.TopLevel = false;
+            SplitContainer1.Panel2.Controls.Add(fp);
+            fp.Show();
+            fp.LabelInfo.Text = "Pencarian Data IUP IPR";
+            //fp.LabelInfo.Text = "1";
+            // fp.tampilGrid();
+            fp.BringToFront();
         }
     }
 }

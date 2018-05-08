@@ -17,11 +17,11 @@ namespace ConnectCsharpToMysql
         private string database;
         private string uid;
         private string password;
-       // public MySqlDataAdapter adapt=null;
+        public MySqlDataAdapter adapt = null;
         public MySqlCommand cmd;
-       //public MySqlDataReader reader;
-        MySqlDataAdapter tampil;
-        DataSet ds = new DataSet();
+        public MySqlDataAdapter tampil;
+        public DataSet ds = new DataSet();
+        public DataTable dt = new DataTable();
 
         //Constructor
         public DBConnect()
@@ -40,6 +40,11 @@ namespace ConnectCsharpToMysql
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
             connection = new MySqlConnection(connectionString);
+        }
+
+        internal void tampilCombo(ComboBox cbbLokasi, DataView dataView, object dv, string sqlLokasi, string v1, string v2)
+        {
+            throw new NotImplementedException();
         }
 
 
@@ -69,6 +74,16 @@ namespace ConnectCsharpToMysql
                 }
                 return false;
             }
+        }
+
+        public void pencarian(DataGridView dgv, string _namaPerusahaan)
+        {
+            //string sql = "select * from esdm_perusahaan where namaPerusahaan like '%" + _namaPerusahaan + "%'";
+            //dbConnect.tampilData(dgv, sql);
+            //if (dgvList.Rows.Count == 0)
+            //{
+            //    MessageBox.Show("data tidak ditemukan.", "informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
 
         //Close connection
@@ -103,25 +118,56 @@ namespace ConnectCsharpToMysql
 
                 throw ex;
             }
-           
+
         }
+
+        public void tampilCombo(ComboBox dgv, string perintah,string list,string nilai)
+        {
+            try
+            {
+                this.OpenConnection();
+                cmd = new MySqlCommand(perintah, connection);
+                tampil = new MySqlDataAdapter(cmd);
+                ds.Clear();
+                tampil.Fill(dt);
+                DataView dv = new DataView(dt);
+                dgv.DataSource = dv;
+                dgv.DisplayMember = list;
+                dgv.ValueMember = nilai;
+                this.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
 
         public void Insert(String sql)
         {
             string query = sql;
-
-            //open connection
-            if (this.OpenConnection() == true)
+            try
             {
-                //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                
-                //Execute command
-                cmd.ExecuteNonQuery();
+                //open connection
+                if (this.OpenConnection() == true)
+                {
+                    //create command and assign the query and connection from the constructor
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                //close connection
-                this.CloseConnection();
+                    //Execute command
+                    cmd.ExecuteNonQuery();
+
+                    //close connection
+                    this.CloseConnection();
+                }
             }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
         }
 
         //Update statement
@@ -145,7 +191,7 @@ namespace ConnectCsharpToMysql
             {
                 MessageBox.Show(ex.ToString(), "Informasi");
             }
-           
+
         }
 
         //Delete statement
@@ -157,26 +203,30 @@ namespace ConnectCsharpToMysql
                 if (this.OpenConnection() == true)
                 {
                     MySqlCommand cmd = new MySqlCommand(query, connection);
-                    if(MessageBox.Show("Apakah yakin ?","Pertanyaan",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                    if (MessageBox.Show("Apakah yakin ?", "Pertanyaan", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Berhasil dihapus", "informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.CloseConnection();
                     }
-                   
+
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message,"informasi",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(e.Message, "informasi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-           
+
         }
 
         //Select statement
-        public List<string>[] SelectLokasiDetil()
+        public List<string>[] SelectLokasiDetil(string nama)
         {
-            string query = "SELECT * FROM esdm_lokasi_detil";
+            string query = "SELECT eld.pLat,eld.pLong FROM esdm_perusahaan p " +
+                    " INNER JOIN esdm_izin_perusahaan ip ON p.idPerusahaan = ip.idPerusahaan " +
+                    " INNER JOIN esdm_lokasi el ON ip.idLokasi = el.idLokasi " +
+                    " INNER JOIN esdm_lokasi_detil eld ON el.idLokasi = eld.idLokasi " +
+                    " where p.namaPerusahaan like '%" + nama + "%'";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
@@ -192,10 +242,112 @@ namespace ConnectCsharpToMysql
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["polKordinatLong"] + "");
-                    list[1].Add(dataReader["polKordinatLat"] + "");
+                    list[0].Add(dataReader["pLat"] + "");
+                    list[1].Add(dataReader["pLong"] + "");
                 }
+                dataReader.Close();
+                this.CloseConnection();
+                return list;
+            }
+            else
+            {
+                return list;
+            }
+        }
 
+        public List<string>[] selectPenanda()
+        {
+            string query = "SELECT p.namaPerusahaan,eld.pLat,eld.pLong FROM esdm_perusahaan p " +
+                    " INNER JOIN esdm_izin_perusahaan ip ON p.idPerusahaan = ip.idPerusahaan " +
+                    " INNER JOIN esdm_lokasi el ON ip.idLokasi = el.idLokasi " +
+                    " INNER JOIN esdm_lokasi_detil eld ON el.idLokasi = eld.idLokasi " +
+                    " group by eld.idlokasi";
+
+            //Create a list to store the result
+            List<string>[] list = new List<string>[3];
+            list[0] = new List<string>();
+            list[1] = new List<string>();
+            list[2] = new List<string>();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list[0].Add(dataReader["namaPerusahaan"] + "");
+                    list[1].Add(dataReader["pLat"] + "");
+                    list[2].Add(dataReader["pLong"] + "");
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return list;
+            }
+            else
+            {
+                return list;
+            }
+        }
+
+        public List<string>[] SelectLokasiDetil()
+        {
+            string query = "SELECT idLokasi,pLat,pLong FROM esdm_lokasi_detil";
+
+            //Create a list to store the result
+            List<string>[] list = new List<string>[3];
+            list[0] = new List<string>();
+            list[1] = new List<string>();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    list[0].Add(dataReader["pLat"] + "");
+                    list[1].Add(dataReader["pLong"] + "");
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return list;
+            }
+            else
+            {
+                return list;
+            }
+        }
+
+        public List<string>[] selectPenandaDetil(string nama)
+        {
+            string query = "SELECT p.namaPerusahaan,eld.pLat,eld.pLong FROM esdm_perusahaan p " +
+                    " INNER JOIN esdm_izin_perusahaan ip ON p.idPerusahaan = ip.idPerusahaan " +
+                    " INNER JOIN esdm_lokasi el ON ip.idLokasi = el.idLokasi " +
+                    " INNER JOIN esdm_lokasi_detil eld ON el.idLokasi = eld.idLokasi " +
+                    " where p.namaPerusahaan like '%" + nama + "%'" +
+                    " group by eld.idlokasi";
+
+            List<string>[] list = new List<string>[3];
+            list[0] = new List<string>();
+            list[1] = new List<string>();
+            list[2] = new List<string>();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list[0].Add(dataReader["namaPerusahaan"] + "");
+                    list[1].Add(dataReader["pLat"] + "");
+                    list[2].Add(dataReader["pLong"] + "");
+                }
                 dataReader.Close();
                 this.CloseConnection();
                 return list;
@@ -252,8 +404,8 @@ namespace ConnectCsharpToMysql
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //ExecuteScalar will return one value
-                Count = int.Parse(cmd.ExecuteScalar()+"");
-                
+                Count = int.Parse(cmd.ExecuteScalar() + "");
+
                 //close Connection
                 this.CloseConnection();
 
@@ -284,7 +436,7 @@ namespace ConnectCsharpToMysql
                 path = "C:\\" + year + "-" + month + "-" + day + "-" + hour + "-" + minute + "-" + second + "-" + millisecond + ".sql";
                 StreamWriter file = new StreamWriter(path);
 
-                
+
                 ProcessStartInfo psi = new ProcessStartInfo();
                 psi.FileName = "mysqldump";
                 psi.RedirectStandardInput = false;
@@ -303,7 +455,7 @@ namespace ConnectCsharpToMysql
             }
             catch (IOException ex)
             {
-                MessageBox.Show("Error , unable to backup!"+ex);
+                MessageBox.Show("Error , unable to backup!" + ex);
             }
         }
 
@@ -327,7 +479,7 @@ namespace ConnectCsharpToMysql
                 psi.Arguments = string.Format(@"-u{0} -p{1} -h{2} {3}", uid, password, server, database);
                 psi.UseShellExecute = false;
 
-                
+
                 Process process = Process.Start(psi);
                 process.StandardInput.WriteLine(input);
                 process.StandardInput.Close();
@@ -336,7 +488,7 @@ namespace ConnectCsharpToMysql
             }
             catch (IOException ex)
             {
-                MessageBox.Show("Error , unable to Restore!"+ex);
+                MessageBox.Show("Error , unable to Restore!" + ex);
             }
         }
     }

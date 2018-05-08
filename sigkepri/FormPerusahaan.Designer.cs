@@ -41,17 +41,18 @@
             this.btnTambah = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Label2 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
             this.dgvList = new System.Windows.Forms.DataGridView();
-            this.TlpTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.NamaPerusahaanTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.AlamatTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.btnSimpan = new System.Windows.Forms.Button();
             this.idPerusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namaPerusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alamat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TlpTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.NamaPerusahaanTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.AlamatTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.btnSimpan = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
@@ -68,7 +69,7 @@
             this.Panel1.Controls.Add(this.btnTambah);
             this.Panel1.Controls.Add(this.btnEdit);
             this.Panel1.Controls.Add(this.PictureBox1);
-            this.Panel1.Controls.Add(this.Label2);
+            this.Panel1.Controls.Add(this.lblStatus);
             this.Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panel1.Location = new System.Drawing.Point(0, 0);
             this.Panel1.Name = "Panel1";
@@ -93,6 +94,7 @@
             this.txtCari.Size = new System.Drawing.Size(237, 33);
             this.txtCari.TabIndex = 22;
             this.txtCari.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCari.OnValueChanged += new System.EventHandler(this.txtCari_OnValueChanged);
             // 
             // Label3
             // 
@@ -189,16 +191,16 @@
             this.PictureBox1.TabIndex = 0;
             this.PictureBox1.TabStop = false;
             // 
-            // Label2
+            // lblStatus
             // 
-            this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.ForeColor = System.Drawing.Color.White;
-            this.Label2.Location = new System.Drawing.Point(33, 42);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(194, 25);
-            this.Label2.TabIndex = 13;
-            this.Label2.Text = "DATA PERUSAHAAN";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.White;
+            this.lblStatus.Location = new System.Drawing.Point(33, 42);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(194, 25);
+            this.lblStatus.TabIndex = 13;
+            this.lblStatus.Text = "DATA PERUSAHAAN";
             // 
             // Label1
             // 
@@ -233,6 +235,51 @@
             this.dgvList.TabIndex = 18;
             this.dgvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellClick);
             this.dgvList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvList_RowPostPaint);
+            // 
+            // idPerusahaan
+            // 
+            this.idPerusahaan.DataPropertyName = "idPerusahaan";
+            this.idPerusahaan.HeaderText = "id";
+            this.idPerusahaan.Name = "idPerusahaan";
+            this.idPerusahaan.ReadOnly = true;
+            this.idPerusahaan.Visible = false;
+            this.idPerusahaan.Width = 40;
+            // 
+            // namaPerusahaan
+            // 
+            this.namaPerusahaan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.namaPerusahaan.DataPropertyName = "namaPerusahaan";
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.namaPerusahaan.DefaultCellStyle = dataGridViewCellStyle1;
+            this.namaPerusahaan.HeaderText = "Nama";
+            this.namaPerusahaan.Name = "namaPerusahaan";
+            this.namaPerusahaan.ReadOnly = true;
+            this.namaPerusahaan.Width = 160;
+            // 
+            // tlp
+            // 
+            this.tlp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.tlp.DataPropertyName = "tlp";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tlp.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tlp.HeaderText = "Telepon";
+            this.tlp.Name = "tlp";
+            this.tlp.ReadOnly = true;
+            this.tlp.Width = 150;
+            // 
+            // alamat
+            // 
+            this.alamat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.alamat.DataPropertyName = "alamat";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.alamat.DefaultCellStyle = dataGridViewCellStyle3;
+            this.alamat.HeaderText = "Alamat";
+            this.alamat.Name = "alamat";
+            this.alamat.ReadOnly = true;
+            this.alamat.Width = 330;
             // 
             // TlpTextBox
             // 
@@ -306,50 +353,11 @@
             this.btnSimpan.UseVisualStyleBackColor = false;
             this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
-            // idPerusahaan
+            // backgroundWorker1
             // 
-            this.idPerusahaan.DataPropertyName = "idPerusahaan";
-            this.idPerusahaan.HeaderText = "id";
-            this.idPerusahaan.Name = "idPerusahaan";
-            this.idPerusahaan.ReadOnly = true;
-            this.idPerusahaan.Visible = false;
-            this.idPerusahaan.Width = 40;
-            // 
-            // namaPerusahaan
-            // 
-            this.namaPerusahaan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.namaPerusahaan.DataPropertyName = "namaPerusahaan";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.namaPerusahaan.DefaultCellStyle = dataGridViewCellStyle1;
-            this.namaPerusahaan.HeaderText = "Nama";
-            this.namaPerusahaan.Name = "namaPerusahaan";
-            this.namaPerusahaan.ReadOnly = true;
-            this.namaPerusahaan.Width = 160;
-            // 
-            // tlp
-            // 
-            this.tlp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.tlp.DataPropertyName = "tlp";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tlp.DefaultCellStyle = dataGridViewCellStyle2;
-            this.tlp.HeaderText = "Telepon";
-            this.tlp.Name = "tlp";
-            this.tlp.ReadOnly = true;
-            this.tlp.Width = 150;
-            // 
-            // alamat
-            // 
-            this.alamat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.alamat.DataPropertyName = "alamat";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.alamat.DefaultCellStyle = dataGridViewCellStyle3;
-            this.alamat.HeaderText = "Alamat";
-            this.alamat.Name = "alamat";
-            this.alamat.ReadOnly = true;
-            this.alamat.Width = 330;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // FormPerusahaan
             // 
@@ -368,6 +376,7 @@
             this.Name = "FormPerusahaan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perusahaan";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPerusahaan_FormClosing);
             this.Load += new System.EventHandler(this.FormPerusahaan_Load);
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
@@ -386,7 +395,7 @@
         internal System.Windows.Forms.Button btnTambah;
         internal System.Windows.Forms.Button btnEdit;
         internal System.Windows.Forms.PictureBox PictureBox1;
-        internal System.Windows.Forms.Label Label2;
+        internal System.Windows.Forms.Label lblStatus;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.DataGridView dgvList;
         internal Bunifu.Framework.UI.BunifuMaterialTextbox TlpTextBox;
@@ -400,5 +409,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn namaPerusahaan;
         private System.Windows.Forms.DataGridViewTextBoxColumn tlp;
         private System.Windows.Forms.DataGridViewTextBoxColumn alamat;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
