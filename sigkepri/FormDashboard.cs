@@ -25,5 +25,28 @@ namespace sigkepri
         {
             label7.ForeColor = Color.FromArgb(64, 0, 64);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
+            {
+                MessageBox.Show("Login Berhasil", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FormMenuUtama fm = new FormMenuUtama();
+                this.Hide();
+                fm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Login Gagal", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtUsername.Text = "" ;
+                txtPassword.Text = "";
+                txtUsername.Focus();
+            }
+        }
     }
 }

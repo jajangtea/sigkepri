@@ -45,6 +45,7 @@
             this.Label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbPerusahaan = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -242,6 +243,11 @@
             this.cbPerusahaan.Size = new System.Drawing.Size(485, 28);
             this.cbPerusahaan.TabIndex = 40;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // FormWiup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +271,7 @@
             this.Name = "FormWiup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormWiup";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormWiup_FormClosing);
             this.Load += new System.EventHandler(this.FormWiup_Load);
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
@@ -292,5 +299,6 @@
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.Label label4;
         internal System.Windows.Forms.ComboBox cbPerusahaan;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

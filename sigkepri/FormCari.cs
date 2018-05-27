@@ -52,12 +52,13 @@ namespace sigkepri
             frm2.tampildglist(txtCari.Text);
             frm2.tampilLokasi(txtCari.Text);
             frm2.tampilKorLokasi(txtCari.Text);
+            frm2.tampilPenanda(txtCari.Text);
             frm2.gambarpolygon(txtCari.Text);
-            //frm2.tampilPenanda(txtCari.Text);
             frm2.sumberDayaChart(txtCari.Text);
             frm2.sumberDayalist(txtCari.Text);
             frm2.CadanganChart(txtCari.Text);
             frm2.cadanganList(txtCari.Text);
+            //frm2.tampildataDokumen(txtCari.Text);
             this.Close();
         }
 

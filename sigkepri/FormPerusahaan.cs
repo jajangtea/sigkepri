@@ -37,7 +37,7 @@ namespace sigkepri
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            dbConnect.Insert("insert into  esdm_perusahaan (namaPerusahaan,tlp,alamat) values('" + NamaPerusahaanTextBox.Text.ToUpper() + "','" + TlpTextBox.Text + "','" + AlamatTextBox.Text.ToString() + "')");
+            dbConnect.Insert("insert into  esdm_perusahaan (namaPerusahaan,tlp,alamat,kepalaTeknik) values('" + NamaPerusahaanTextBox.Text.ToUpper() + "','" + TlpTextBox.Text + "','" + AlamatTextBox.Text.ToString() + "','"+ txtKepalaTeknik.Text +"')");
             dbConnect.tampilData(dgvList, "select * from esdm_perusahaan");
         }
 
@@ -60,6 +60,7 @@ namespace sigkepri
                 NamaPerusahaanTextBox.Text = dgvList.Rows[e.RowIndex].Cells[1].Value.ToString();
                 TlpTextBox.Text = dgvList.Rows[e.RowIndex].Cells[2].Value.ToString();
                 AlamatTextBox.Text = dgvList.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtKepalaTeknik.Text = dgvList.Rows[e.RowIndex].Cells[4].Value.ToString();
             }
             catch (Exception)
             {
@@ -71,10 +72,11 @@ namespace sigkepri
         {
             try
             {
-                dbConnect.Update("update esdm_perusahaan set namaPerusahaan='" + NamaPerusahaanTextBox.Text.ToUpper() + "',tlp='" + TlpTextBox.Text + "',alamat='" + AlamatTextBox.Text + "' where idPerusahaan='"+ dgvList.SelectedCells[0].Value.ToString() +"'");
+                dbConnect.Update("update esdm_perusahaan set namaPerusahaan='" + NamaPerusahaanTextBox.Text.ToUpper() + "',tlp='" + TlpTextBox.Text + "',alamat='" + AlamatTextBox.Text + "',kepalaTeknik='"+ txtKepalaTeknik.Text +"' where idPerusahaan='" + dgvList.SelectedCells[0].Value.ToString() + "'");
                 dgvList.SelectedCells[1].Value = NamaPerusahaanTextBox.Text.ToString();
                 dgvList.SelectedCells[2].Value = TlpTextBox.Text.ToString();
                 dgvList.SelectedCells[3].Value = AlamatTextBox.Text.ToString();
+                dgvList.SelectedCells[4].Value = txtKepalaTeknik.Text.ToString();
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());

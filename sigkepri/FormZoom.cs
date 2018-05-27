@@ -39,7 +39,7 @@ namespace sigkepri
                         try
                         {
                             string id = "19-Tanjungpinang";
-                            string folder = "D:\\Jajang Nurjaman\\Project\\ESDM\\Peta\\Geologi\\";
+                            string folder = "Z:\\ESDM\\Peta\\Geologi\\";
                             string filename = System.IO.Path.Combine(folder, id + ".jpg");
                             LabelPath.Text = filename;
                             ZoomPictureBox1.Image = Image.FromFile(filename);
@@ -58,7 +58,7 @@ namespace sigkepri
                         try
                         {
                             string id = "24-Dabo";
-                            string folder = "D:\\Jajang Nurjaman\\Project\\ESDM\\Peta\\Geologi\\";
+                            string folder = "Z:\\ESDM\\Peta\\Geologi\\";
                             string filename = System.IO.Path.Combine(folder, id + ".jpg");
                             LabelPath.Text = filename;
                             ZoomPictureBox1.Image = Image.FromFile(filename);
@@ -77,7 +77,7 @@ namespace sigkepri
                         try
                         {
                             string id = "44-Tarempa & Jemaja";
-                            string folder = "D:\\Jajang Nurjaman\\Project\\ESDM\\Peta\\Geologi\\";
+                            string folder = "Z:\\ESDM\\Peta\\Geologi\\";
                             string filename = System.IO.Path.Combine(folder, id + ".jpg");
                             LabelPath.Text = filename;
                             ZoomPictureBox1.Image = Image.FromFile(filename);
@@ -96,7 +96,7 @@ namespace sigkepri
                         try
                         {
                             string id = "45-Teluk Butun & Ranai";
-                            string folder = "D:\\Jajang Nurjaman\\Project\\ESDM\\Peta\\Geologi\\";
+                            string folder = "Z:\\ESDM\\Peta\\Geologi\\";
                             string filename = System.IO.Path.Combine(folder, id + ".jpg");
                             LabelPath.Text = filename;
                             ZoomPictureBox1.Image = Image.FromFile(filename);
@@ -115,7 +115,7 @@ namespace sigkepri
                         try
                         {
                             string id = "46-Kep Natuna Selatan";
-                            string folder = "D:\\Jajang Nurjaman\\Project\\ESDM\\Peta\\Geologi\\";
+                            string folder = "Z:\\ESDM\\Peta\\Geologi\\";
                             string filename = System.IO.Path.Combine(folder, id + ".jpg");
                             LabelPath.Text = filename;
                             ZoomPictureBox1.Image = Image.FromFile(filename);
@@ -134,7 +134,7 @@ namespace sigkepri
                         try
                         {
                             string id = "47-Tambelan";
-                            string folder = "D:\\Jajang Nurjaman\\Project\\ESDM\\Peta\\Geologi\\";
+                            string folder = "Z:\\ESDM\\Peta\\Geologi\\";
                             string filename = System.IO.Path.Combine(folder, id + ".jpg");
                             LabelPath.Text = filename;
                             ZoomPictureBox1.Image = Image.FromFile(filename);
@@ -154,7 +154,7 @@ namespace sigkepri
                         try
                         {
                             string id = "Bengkalis-Siak Sriindrapura";
-                            string folder = "D:\\Jajang Nurjaman\\Project\\ESDM\\Peta\\Hidrologi";
+                            string folder = "Z:\\ESDM\\Peta\\Hidrologi";
                             string filename = System.IO.Path.Combine(folder, id + ".jpg");
                             LabelPath.Text = filename;
                             ZoomPictureBox1.Image = Image.FromFile(filename);
@@ -173,7 +173,7 @@ namespace sigkepri
                         try
                         {
                             string id = "Bunguran";
-                            string folder = "D:\\Jajang Nurjaman\\Project\\ESDM\\Peta\\Hidrologi";
+                            string folder = "Z:\\ESDM\\Peta\\Hidrologi";
                             string filename = System.IO.Path.Combine(folder, id + ".BMP");
                             LabelPath.Text = filename;
                             ZoomPictureBox1.Image = Image.FromFile(filename);
@@ -192,7 +192,7 @@ namespace sigkepri
                         try
                         {
                             string id = "Dabo";
-                            string folder = "D:\\Jajang Nurjaman\\Project\\ESDM\\Peta\\Hidrologi";
+                            string folder = "Z:\\ESDM\\Peta\\Hidrologi";
                             string filename = System.IO.Path.Combine(folder, id + ".jpg");
                             LabelPath.Text = filename;
                             ZoomPictureBox1.Image = Image.FromFile(filename);
@@ -211,7 +211,7 @@ namespace sigkepri
                         try
                         {
                             string id = "Natuna";
-                            string folder = "D:\\Jajang Nurjaman\\Project\\ESDM\\Peta\\Hidrologi";
+                            string folder = "Z:\\ESDM\\Peta\\Hidrologi";
                             string filename = System.IO.Path.Combine(folder, id + ".jpg");
                             LabelPath.Text = filename;
                             ZoomPictureBox1.Image = Image.FromFile(filename);

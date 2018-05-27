@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBank));
             this.Label3 = new System.Windows.Forms.Label();
             this.btnHapus = new System.Windows.Forms.Button();
             this.dgvList = new System.Windows.Forms.DataGridView();
+            this.idBank = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaBank = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.btnTambah = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -75,13 +79,49 @@
             this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AllowUserToDeleteRows = false;
             this.dgvList.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idBank,
+            this.namaBank});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvList.Location = new System.Drawing.Point(277, 76);
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(371, 266);
             this.dgvList.TabIndex = 28;
+            this.dgvList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvList_RowPostPaint);
+            // 
+            // idBank
+            // 
+            this.idBank.DataPropertyName = "idBank";
+            this.idBank.HeaderText = "idBank";
+            this.idBank.Name = "idBank";
+            this.idBank.ReadOnly = true;
+            this.idBank.Visible = false;
+            // 
+            // namaBank
+            // 
+            this.namaBank.DataPropertyName = "namaBank";
+            this.namaBank.HeaderText = "Nama Bank";
+            this.namaBank.Name = "namaBank";
+            this.namaBank.ReadOnly = true;
+            this.namaBank.Width = 200;
             // 
             // Panel1
             // 
@@ -160,6 +200,7 @@
             this.btnSimpan.TabIndex = 29;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = false;
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
             // Label1
             // 
@@ -206,6 +247,7 @@
             this.Name = "FormBank";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBank";
+            this.Load += new System.EventHandler(this.FormBank_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
@@ -228,5 +270,7 @@
         internal System.Windows.Forms.Button btnSimpan;
         internal System.Windows.Forms.Label Label1;
         internal Bunifu.Framework.UI.BunifuMaterialTextbox NamaBankTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idBank;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namaBank;
     }
 }

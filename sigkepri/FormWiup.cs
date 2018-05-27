@@ -13,19 +13,34 @@ namespace sigkepri
 {
     public partial class FormWiup : Form
     {
-        private string idizin;
+       
         private DBConnect dbConnect;
         public DataTable dtPerusahaan = new DataTable();
         public DataTable dtlokasi = new DataTable();
         public DataTable dtkomoditi = new DataTable();
         private readonly FormListWiup frmFormListWiup;
-        public string Idizin { get => idizin; set => idizin = value; }
+        private string idizin;
 
+        public string Idizin
+        {
+            get { return idizin; }
+            set { idizin = value; }
+        }
+        //public string Idizin { get => idizin; set => idizin = value; }
+        string __cbPerusahaan, __NoIzinTextBox, __tglPicker, __cbbLokasi, __txtLuas;
+                       
+                      
+                       
         public FormWiup(FormListWiup formListWiup)
         {
             InitializeComponent();
             dbConnect = new DBConnect();
             this.frmFormListWiup = formListWiup;
+
+            backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
+            backgroundWorker1.RunWorkerCompleted += new RunWorkerCompletedEventHandler(backgroundWorker1_RunWorkerCompleted);
+            backgroundWorker1.WorkerReportsProgress = true;
+            backgroundWorker1.WorkerSupportsCancellation = true;
         }
         
 
@@ -99,39 +114,24 @@ namespace sigkepri
 
         }
 
-        private void FormWiup_Load(object sender, EventArgs e)
+        private void FormWiup_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
+            if (backgroundWorker1.IsBusy)
             {
-                this.tampilComboPerusahaan(cbPerusahaan, "namaPerusahaan", "idPerusahaan");
-                this.tampilComboLokasi(cbbLokasi, "alamatLokasi", "idLokasi");
-                this.tampilComboKomoditi(bdKomoditi, "namaBahanGalian", "idBahanGalian");
-                string sql = "select * from esdm_wiup ew " +
-                    "inner join esdm_perusahaan ep on ew.idPerusahaan=ep.idPerusahaan " +
-                    "inner join esdm_lokasi el on ew.idLokasi=el.idLokasi " +
-                    "where  idWiup='" + this.idizin + "'";
-                if (dbConnect.OpenConnection() == true)
+                backgroundWorker1.CancelAsync();
+                while (backgroundWorker1.IsBusy)
                 {
-                    MySqlCommand cmd = new MySqlCommand(sql, dbConnect.connection);
-                    MySqlDataReader dataReader = cmd.ExecuteReader();
-                    while (dataReader.Read())
-                    {
-                        cbPerusahaan.Text = dataReader["namaPerusahaan"] + "";
-                        NoIzinTextBox.Text = dataReader["noIzin"] + "";
-                        tglPicker.Text = dataReader["tglIzin"].ToString() + "";
-                        cbbLokasi.Text = dataReader["alamatLokasi"].ToString() + "";
-                        txtLuas.Text = dataReader["luas"].ToString() + "";
-                    }
-                    dataReader.Close();
-                    dbConnect.CloseConnection();
+                    Application.DoEvents();
                 }
             }
-            catch (Exception ex)
-            {
+        }
 
-                throw ex;
-            }
-
+        private void FormWiup_Load(object sender, EventArgs e)
+        {
+            this.tampilComboPerusahaan(cbPerusahaan, "namaPerusahaan", "idPerusahaan");
+            this.tampilComboLokasi(cbbLokasi, "alamatLokasi", "idLokasi");
+            this.tampilComboKomoditi(bdKomoditi, "namaBahanGalian", "idBahanGalian");
+            backgroundWorker1.RunWorkerAsync();
         }
 
 
@@ -142,13 +142,14 @@ namespace sigkepri
             {
                 if(btnSimpan.Text=="Simpan")
                 {
-                    dbConnect.Insert("insert into  esdm_wiup (idPerusahaan,idLokasi,idBahanGalian,noIzin,tglIzin,luas) values" +
-                   "('" + cbPerusahaan.SelectedValue + "','" + cbbLokasi.SelectedValue + "','" + bdKomoditi.SelectedValue + "','" + NoIzinTextBox.Text.Trim() + "','" + tglPicker.Value.ToString("yyyy-MM-dd") + "','" + txtLuas.Text.Trim() + "')");
+                    string sql = "insert into  esdm_wiup (idPerusahaan,idLokasi,idBahanGalian,noIzin,tglIzin,luas) values" +
+                   "('" + cbPerusahaan.SelectedValue + "','" + cbbLokasi.SelectedValue + "','" + bdKomoditi.SelectedValue + "','" + NoIzinTextBox.Text.Trim() + "','" + tglPicker.Value.ToString("yyyy-MM-dd") + "','" + txtLuas.Text.Trim() + "')";
+                    dbConnect.Insert(sql);
                     frmFormListWiup.tampilkan();
                 }
                 else
                 {
-                    dbConnect.Insert("update esdm_wiup set idPerusahaan='"+ cbPerusahaan.SelectedValue + "',idLokasi='"+ cbbLokasi.SelectedValue + "',idBahanGalian='"+ bdKomoditi.SelectedValue + "',noIzin='" + NoIzinTextBox.Text.Trim() + "',tglIzin='"+ tglPicker.Value.ToString("yyyy-MM-dd") + "',luas='"+ txtLuas.Text.Trim() + "' where idWiup='"+ this.idizin +"'");
+                    dbConnect.Insert("update esdm_wiup set idPerusahaan='"+ cbPerusahaan.SelectedValue + "',idLokasi='"+ cbbLokasi.SelectedValue + "',idBahanGalian='"+ bdKomoditi.SelectedValue + "',noIzin='" + NoIzinTextBox.Text.Trim() + "',tglIzin='"+ tglPicker.Value.ToString("yyyy-MM-dd") + "',luas='"+ txtLuas.Text.Trim() + "' where idWiup='"+ this.Idizin +"'");
                     frmFormListWiup.tampilkan();
                 }
                
@@ -158,6 +159,49 @@ namespace sigkepri
 
                 throw;
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+              
+                string sql = "select * from esdm_wiup ew " +
+                    "inner join esdm_perusahaan ep on ew.idPerusahaan=ep.idPerusahaan " +
+                    "inner join esdm_lokasi el on ew.idLokasi=el.idLokasi " +
+                    "where  idWiup='" + this.Idizin + "'";
+                if (dbConnect.OpenConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand(sql, dbConnect.connection);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        __cbPerusahaan = dataReader["namaPerusahaan"] + "";
+                        __NoIzinTextBox = dataReader["noIzin"] + "";
+                        __tglPicker = dataReader["tglIzin"].ToString() + "";
+                        __cbbLokasi = dataReader["alamatLokasi"].ToString() + "";
+                        __txtLuas = dataReader["luas"].ToString() + "";
+                    }
+                    dataReader.Close();
+                    dbConnect.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+           
+
+            __cbPerusahaan = cbPerusahaan.Text;
+            __NoIzinTextBox = NoIzinTextBox.Text; ;
+            __tglPicker = tglPicker.Value.ToString();
+            __cbbLokasi = cbbLokasi.Text;
+            __txtLuas = txtLuas.Text;
         }
     }
 }

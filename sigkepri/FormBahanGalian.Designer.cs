@@ -178,7 +178,7 @@
             this.NamaBahanGalianTextBox.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NamaBahanGalianTextBox.ForeColor = System.Drawing.Color.Black;
             this.NamaBahanGalianTextBox.HintForeColor = System.Drawing.Color.Black;
-            this.NamaBahanGalianTextBox.HintText = "Nama Bahan Galian";
+            this.NamaBahanGalianTextBox.HintText = "Nama Komoditas";
             this.NamaBahanGalianTextBox.isPassword = false;
             this.NamaBahanGalianTextBox.LineFocusedColor = System.Drawing.Color.Crimson;
             this.NamaBahanGalianTextBox.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(104)))), ((int)(((byte)(116)))));
@@ -205,7 +205,8 @@
             this.MaximizeBox = false;
             this.Name = "FormBahanGalian";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormBahanGalian";
+            this.Text = "Komoditas";
+            this.Load += new System.EventHandler(this.FormBahanGalian_Load);
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();

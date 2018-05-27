@@ -28,86 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuUtama));
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.SplitContainer1 = new System.Windows.Forms.SplitContainer();
             this.innerPanel1 = new System.Windows.Forms.Panel();
+            this.xPander2 = new XPanderControl.XPander();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.xPander1 = new XPanderControl.XPander();
+            this.label2 = new System.Windows.Forms.Label();
             this.xPander7 = new XPanderControl.XPander();
             this.label5 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.hidrologiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tanjungpinangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.daboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tarempaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.telukButunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ranaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.natunaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hodrologiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.xPander8 = new XPanderControl.XPander();
             this.lbOffline = new System.Windows.Forms.Label();
             this.lbOnline = new System.Windows.Forms.Label();
+            this.xPanderSumberDayaAir = new XPanderControl.XPander();
+            this.label6 = new System.Windows.Forms.Label();
             this.xPander9 = new XPanderControl.XPander();
             this.lbiupipr = new System.Windows.Forms.Label();
             this.lbiupe = new System.Windows.Forms.Label();
             this.lbiupep = new System.Windows.Forms.Label();
             this.lbtnWiup = new System.Windows.Forms.Label();
             this.xPander10 = new XPanderControl.XPander();
-            this.label15 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.lbJaminan = new System.Windows.Forms.Label();
             this.lbtnPerusahaan = new System.Windows.Forms.Label();
             this.xPander6 = new XPanderControl.XPander();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer1)).BeginInit();
             this.SplitContainer1.Panel1.SuspendLayout();
             this.SplitContainer1.Panel2.SuspendLayout();
             this.SplitContainer1.SuspendLayout();
             this.innerPanel1.SuspendLayout();
+            this.xPander2.SuspendLayout();
+            this.xPander1.SuspendLayout();
             this.xPander7.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.xPander8.SuspendLayout();
+            this.xPanderSumberDayaAir.SuspendLayout();
             this.xPander9.SuspendLayout();
             this.xPander10.SuspendLayout();
             this.xPander6.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel1
             // 
+            this.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Panel1.Controls.Add(this.SplitContainer1);
             this.Panel1.Controls.Add(this.panel2);
             this.Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel1.Location = new System.Drawing.Point(0, 0);
             this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(786, 749);
+            this.Panel1.Size = new System.Drawing.Size(1002, 506);
             this.Panel1.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Crimson;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(786, 749);
-            this.panel2.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(786, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SISTEM INFORMASI GEOGRAFIS DINAS ESDM PROVINSI KEPULAUAN RIAU";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SplitContainer1
             // 
-            this.SplitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.SplitContainer1.IsSplitterFixed = true;
             this.SplitContainer1.Location = new System.Drawing.Point(0, 43);
             this.SplitContainer1.Name = "SplitContainer1";
             // 
@@ -121,7 +125,7 @@
             this.SplitContainer1.Panel2.BackColor = System.Drawing.Color.Purple;
             this.SplitContainer1.Panel2.Controls.Add(this.bunifuGradientPanel1);
             this.SplitContainer1.Panel2.ForeColor = System.Drawing.Color.White;
-            this.SplitContainer1.Size = new System.Drawing.Size(786, 706);
+            this.SplitContainer1.Size = new System.Drawing.Size(1002, 463);
             this.SplitContainer1.SplitterDistance = 203;
             this.SplitContainer1.SplitterWidth = 1;
             this.SplitContainer1.TabIndex = 5;
@@ -130,16 +134,125 @@
             // 
             this.innerPanel1.AutoScroll = true;
             this.innerPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.innerPanel1.Controls.Add(this.xPander2);
+            this.innerPanel1.Controls.Add(this.xPander1);
             this.innerPanel1.Controls.Add(this.xPander7);
             this.innerPanel1.Controls.Add(this.xPander8);
+            this.innerPanel1.Controls.Add(this.xPanderSumberDayaAir);
             this.innerPanel1.Controls.Add(this.xPander9);
             this.innerPanel1.Controls.Add(this.xPander10);
             this.innerPanel1.Controls.Add(this.xPander6);
             this.innerPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.innerPanel1.Location = new System.Drawing.Point(0, 0);
             this.innerPanel1.Name = "innerPanel1";
-            this.innerPanel1.Size = new System.Drawing.Size(203, 706);
+            this.innerPanel1.Size = new System.Drawing.Size(203, 463);
             this.innerPanel1.TabIndex = 30;
+            // 
+            // xPander2
+            // 
+            this.xPander2.BackColor = System.Drawing.Color.Transparent;
+            this.xPander2.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+            this.xPander2.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.xPander2.CaptionFormatFlag = XPanderControl.XPander.FormatFlag.NoWrap;
+            this.xPander2.CaptionLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.xPander2.CaptionRightColor = System.Drawing.Color.Teal;
+            this.xPander2.CaptionStyle = XPanderControl.XPander.CaptionStyleEnum.Normal;
+            this.xPander2.CaptionText = "Cetak Laporan";
+            this.xPander2.CaptionTextAlign = XPanderControl.XPander.CaptionTextAlignment.Left;
+            this.xPander2.CaptionTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.xPander2.CaptionTextHighlightColor = System.Drawing.Color.White;
+            this.xPander2.ChevronStyle = XPanderControl.XPander.ChevronStyleEnum.Image;
+            this.xPander2.CollapsedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander2.CollapsedHighlightImage")));
+            this.xPander2.CollapsedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander2.CollapsedImage")));
+            this.xPander2.Controls.Add(this.label8);
+            this.xPander2.Controls.Add(this.label7);
+            this.xPander2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.xPander2.ExpandedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander2.ExpandedHighlightImage")));
+            this.xPander2.ExpandedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander2.ExpandedImage")));
+            this.xPander2.Location = new System.Drawing.Point(0, 859);
+            this.xPander2.Name = "xPander2";
+            this.xPander2.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.xPander2.PaneBottomRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.xPander2.PaneOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.xPander2.PaneTopLeftColor = System.Drawing.Color.Purple;
+            this.xPander2.Size = new System.Drawing.Size(186, 105);
+            this.xPander2.TabIndex = 31;
+            this.xPander2.TooltipText = null;
+            // 
+            // label8
+            // 
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Location = new System.Drawing.Point(17, 73);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(142, 23);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "      Laporan IUP";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label7
+            // 
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label7.Location = new System.Drawing.Point(17, 40);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(142, 23);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "      Laporan WIUP";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // xPander1
+            // 
+            this.xPander1.BackColor = System.Drawing.Color.Transparent;
+            this.xPander1.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+            this.xPander1.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.xPander1.CaptionFormatFlag = XPanderControl.XPander.FormatFlag.NoWrap;
+            this.xPander1.CaptionLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.xPander1.CaptionRightColor = System.Drawing.Color.Teal;
+            this.xPander1.CaptionStyle = XPanderControl.XPander.CaptionStyleEnum.Normal;
+            this.xPander1.CaptionText = "Rekapitulasi";
+            this.xPander1.CaptionTextAlign = XPanderControl.XPander.CaptionTextAlignment.Left;
+            this.xPander1.CaptionTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.xPander1.CaptionTextHighlightColor = System.Drawing.Color.White;
+            this.xPander1.ChevronStyle = XPanderControl.XPander.ChevronStyleEnum.Image;
+            this.xPander1.CollapsedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander1.CollapsedHighlightImage")));
+            this.xPander1.CollapsedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander1.CollapsedImage")));
+            this.xPander1.Controls.Add(this.label2);
+            this.xPander1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.xPander1.ExpandedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander1.ExpandedHighlightImage")));
+            this.xPander1.ExpandedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander1.ExpandedImage")));
+            this.xPander1.Location = new System.Drawing.Point(0, 774);
+            this.xPander1.Name = "xPander1";
+            this.xPander1.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.xPander1.PaneBottomRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.xPander1.PaneOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.xPander1.PaneTopLeftColor = System.Drawing.Color.Purple;
+            this.xPander1.Size = new System.Drawing.Size(186, 85);
+            this.xPander1.TabIndex = 29;
+            this.xPander1.TooltipText = null;
+            // 
+            // label2
+            // 
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(17, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 23);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "      Rekap";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // xPander7
             // 
@@ -150,7 +263,7 @@
             this.xPander7.CaptionLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.xPander7.CaptionRightColor = System.Drawing.Color.Teal;
             this.xPander7.CaptionStyle = XPanderControl.XPander.CaptionStyleEnum.Normal;
-            this.xPander7.CaptionText = "Rekapitulasi";
+            this.xPander7.CaptionText = "Peta Lainnya";
             this.xPander7.CaptionTextAlign = XPanderControl.XPander.CaptionTextAlignment.Left;
             this.xPander7.CaptionTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.xPander7.CaptionTextHighlightColor = System.Drawing.Color.White;
@@ -161,18 +274,19 @@
             this.xPander7.Dock = System.Windows.Forms.DockStyle.Top;
             this.xPander7.ExpandedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander7.ExpandedHighlightImage")));
             this.xPander7.ExpandedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander7.ExpandedImage")));
-            this.xPander7.Location = new System.Drawing.Point(0, 701);
+            this.xPander7.Location = new System.Drawing.Point(0, 693);
             this.xPander7.Name = "xPander7";
             this.xPander7.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
             this.xPander7.PaneBottomRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.xPander7.PaneOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.xPander7.PaneTopLeftColor = System.Drawing.Color.Purple;
-            this.xPander7.Size = new System.Drawing.Size(186, 116);
+            this.xPander7.Size = new System.Drawing.Size(186, 81);
             this.xPander7.TabIndex = 28;
             this.xPander7.TooltipText = null;
             // 
             // label5
             // 
+            this.label5.ContextMenuStrip = this.contextMenuStrip1;
             this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
@@ -180,11 +294,126 @@
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label5.Location = new System.Drawing.Point(17, 40);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 23);
+            this.label5.Size = new System.Drawing.Size(166, 23);
             this.label5.TabIndex = 1;
-            this.label5.Text = "      Rekap";
+            this.label5.Text = "      Geologi dan Hidrologi";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hidrologiToolStripMenuItem,
+            this.hodrologiToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(137, 48);
+            // 
+            // hidrologiToolStripMenuItem
+            // 
+            this.hidrologiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tanjungpinangToolStripMenuItem,
+            this.daboToolStripMenuItem,
+            this.tarempaToolStripMenuItem,
+            this.telukButunToolStripMenuItem,
+            this.ranaiToolStripMenuItem,
+            this.natunaToolStripMenuItem});
+            this.hidrologiToolStripMenuItem.Name = "hidrologiToolStripMenuItem";
+            this.hidrologiToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.hidrologiToolStripMenuItem.Text = "Geologi";
+            // 
+            // tanjungpinangToolStripMenuItem
+            // 
+            this.tanjungpinangToolStripMenuItem.Name = "tanjungpinangToolStripMenuItem";
+            this.tanjungpinangToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.tanjungpinangToolStripMenuItem.Text = "Tanjungpinang";
+            this.tanjungpinangToolStripMenuItem.Click += new System.EventHandler(this.tanjungpinangToolStripMenuItem_Click_1);
+            // 
+            // daboToolStripMenuItem
+            // 
+            this.daboToolStripMenuItem.Name = "daboToolStripMenuItem";
+            this.daboToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.daboToolStripMenuItem.Text = "Dabo";
+            this.daboToolStripMenuItem.Click += new System.EventHandler(this.daboToolStripMenuItem_Click_1);
+            // 
+            // tarempaToolStripMenuItem
+            // 
+            this.tarempaToolStripMenuItem.Name = "tarempaToolStripMenuItem";
+            this.tarempaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.tarempaToolStripMenuItem.Text = "Tarempa";
+            this.tarempaToolStripMenuItem.Click += new System.EventHandler(this.tarempaToolStripMenuItem_Click_1);
+            // 
+            // telukButunToolStripMenuItem
+            // 
+            this.telukButunToolStripMenuItem.Name = "telukButunToolStripMenuItem";
+            this.telukButunToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.telukButunToolStripMenuItem.Text = "Teluk Butun";
+            this.telukButunToolStripMenuItem.Click += new System.EventHandler(this.telukButunToolStripMenuItem_Click_1);
+            // 
+            // ranaiToolStripMenuItem
+            // 
+            this.ranaiToolStripMenuItem.Name = "ranaiToolStripMenuItem";
+            this.ranaiToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.ranaiToolStripMenuItem.Text = "Ranai";
+            this.ranaiToolStripMenuItem.Click += new System.EventHandler(this.ranaiToolStripMenuItem_Click_1);
+            // 
+            // natunaToolStripMenuItem
+            // 
+            this.natunaToolStripMenuItem.Name = "natunaToolStripMenuItem";
+            this.natunaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.natunaToolStripMenuItem.Text = "Natuna";
+            this.natunaToolStripMenuItem.Click += new System.EventHandler(this.natunaToolStripMenuItem_Click_1);
+            // 
+            // hodrologiToolStripMenuItem
+            // 
+            this.hodrologiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem6});
+            this.hodrologiToolStripMenuItem.Name = "hodrologiToolStripMenuItem";
+            this.hodrologiToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.hodrologiToolStripMenuItem.Text = "Hodrologi";
+            this.hodrologiToolStripMenuItem.Click += new System.EventHandler(this.hodrologiToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItem1.Text = "Tanjungpinang";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItem2.Text = "Dabo";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItem3.Text = "Tarempa";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItem4.Text = "Teluk Butun";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItem5.Text = "Ranai";
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItem6.Text = "Natuna";
             // 
             // xPander8
             // 
@@ -207,7 +436,7 @@
             this.xPander8.Dock = System.Windows.Forms.DockStyle.Top;
             this.xPander8.ExpandedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander8.ExpandedHighlightImage")));
             this.xPander8.ExpandedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander8.ExpandedImage")));
-            this.xPander8.Location = new System.Drawing.Point(0, 585);
+            this.xPander8.Location = new System.Drawing.Point(0, 577);
             this.xPander8.Name = "xPander8";
             this.xPander8.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
             this.xPander8.PaneBottomRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -224,12 +453,13 @@
             this.lbOffline.ForeColor = System.Drawing.Color.White;
             this.lbOffline.Image = ((System.Drawing.Image)(resources.GetObject("lbOffline.Image")));
             this.lbOffline.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbOffline.Location = new System.Drawing.Point(17, 80);
+            this.lbOffline.Location = new System.Drawing.Point(17, 78);
             this.lbOffline.Name = "lbOffline";
             this.lbOffline.Size = new System.Drawing.Size(108, 23);
             this.lbOffline.TabIndex = 1;
             this.lbOffline.Text = "Offline";
             this.lbOffline.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbOffline.Click += new System.EventHandler(this.lbOffline_Click);
             // 
             // lbOnline
             // 
@@ -238,13 +468,58 @@
             this.lbOnline.ForeColor = System.Drawing.Color.White;
             this.lbOnline.Image = ((System.Drawing.Image)(resources.GetObject("lbOnline.Image")));
             this.lbOnline.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbOnline.Location = new System.Drawing.Point(17, 47);
+            this.lbOnline.Location = new System.Drawing.Point(17, 45);
             this.lbOnline.Name = "lbOnline";
             this.lbOnline.Size = new System.Drawing.Size(108, 23);
             this.lbOnline.TabIndex = 0;
             this.lbOnline.Text = "Online";
             this.lbOnline.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbOnline.Click += new System.EventHandler(this.lbOnline_Click);
+            // 
+            // xPanderSumberDayaAir
+            // 
+            this.xPanderSumberDayaAir.BackColor = System.Drawing.Color.Transparent;
+            this.xPanderSumberDayaAir.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+            this.xPanderSumberDayaAir.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.xPanderSumberDayaAir.CaptionFormatFlag = XPanderControl.XPander.FormatFlag.NoWrap;
+            this.xPanderSumberDayaAir.CaptionLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.xPanderSumberDayaAir.CaptionRightColor = System.Drawing.Color.Teal;
+            this.xPanderSumberDayaAir.CaptionStyle = XPanderControl.XPander.CaptionStyleEnum.Normal;
+            this.xPanderSumberDayaAir.CaptionText = "Sumber Daya Air";
+            this.xPanderSumberDayaAir.CaptionTextAlign = XPanderControl.XPander.CaptionTextAlignment.Left;
+            this.xPanderSumberDayaAir.CaptionTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.xPanderSumberDayaAir.CaptionTextHighlightColor = System.Drawing.Color.White;
+            this.xPanderSumberDayaAir.ChevronStyle = XPanderControl.XPander.ChevronStyleEnum.Image;
+            this.xPanderSumberDayaAir.CollapsedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPanderSumberDayaAir.CollapsedHighlightImage")));
+            this.xPanderSumberDayaAir.CollapsedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPanderSumberDayaAir.CollapsedImage")));
+            this.xPanderSumberDayaAir.Controls.Add(this.label6);
+            this.xPanderSumberDayaAir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.xPanderSumberDayaAir.ExpandedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPanderSumberDayaAir.ExpandedHighlightImage")));
+            this.xPanderSumberDayaAir.ExpandedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPanderSumberDayaAir.ExpandedImage")));
+            this.xPanderSumberDayaAir.Location = new System.Drawing.Point(0, 492);
+            this.xPanderSumberDayaAir.Name = "xPanderSumberDayaAir";
+            this.xPanderSumberDayaAir.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.xPanderSumberDayaAir.PaneBottomRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.xPanderSumberDayaAir.PaneOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.xPanderSumberDayaAir.PaneTopLeftColor = System.Drawing.Color.Purple;
+            this.xPanderSumberDayaAir.Size = new System.Drawing.Size(186, 85);
+            this.xPanderSumberDayaAir.TabIndex = 30;
+            this.xPanderSumberDayaAir.TooltipText = null;
+            // 
+            // label6
+            // 
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.Location = new System.Drawing.Point(17, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 23);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "      Perizinan";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // xPander9
             // 
@@ -269,7 +544,7 @@
             this.xPander9.Dock = System.Windows.Forms.DockStyle.Top;
             this.xPander9.ExpandedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander9.ExpandedHighlightImage")));
             this.xPander9.ExpandedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander9.ExpandedImage")));
-            this.xPander9.Location = new System.Drawing.Point(0, 423);
+            this.xPander9.Location = new System.Drawing.Point(0, 330);
             this.xPander9.Name = "xPander9";
             this.xPander9.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
             this.xPander9.PaneBottomRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -355,14 +630,11 @@
             this.xPander10.ChevronStyle = XPanderControl.XPander.ChevronStyleEnum.Image;
             this.xPander10.CollapsedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander10.CollapsedHighlightImage")));
             this.xPander10.CollapsedImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander10.CollapsedImage")));
-            this.xPander10.Controls.Add(this.label15);
             this.xPander10.Controls.Add(this.label18);
             this.xPander10.Controls.Add(this.label19);
             this.xPander10.Controls.Add(this.label20);
             this.xPander10.Controls.Add(this.label21);
             this.xPander10.Controls.Add(this.label22);
-            this.xPander10.Controls.Add(this.label23);
-            this.xPander10.Controls.Add(this.lbJaminan);
             this.xPander10.Controls.Add(this.lbtnPerusahaan);
             this.xPander10.Dock = System.Windows.Forms.DockStyle.Top;
             this.xPander10.ExpandedHighlightImage = ((System.Drawing.Bitmap)(resources.GetObject("xPander10.ExpandedHighlightImage")));
@@ -373,23 +645,9 @@
             this.xPander10.PaneBottomRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.xPander10.PaneOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.xPander10.PaneTopLeftColor = System.Drawing.Color.Purple;
-            this.xPander10.Size = new System.Drawing.Size(186, 307);
+            this.xPander10.Size = new System.Drawing.Size(186, 214);
             this.xPander10.TabIndex = 25;
             this.xPander10.TooltipText = null;
-            // 
-            // label15
-            // 
-            this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Image = ((System.Drawing.Image)(resources.GetObject("label15.Image")));
-            this.label15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label15.Location = new System.Drawing.Point(19, 270);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(105, 23);
-            this.label15.TabIndex = 10;
-            this.label15.Text = "      Bahan Galian";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label18
             // 
@@ -398,12 +656,13 @@
             this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Image = ((System.Drawing.Image)(resources.GetObject("label18.Image")));
             this.label18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label18.Location = new System.Drawing.Point(19, 241);
+            this.label18.Location = new System.Drawing.Point(19, 181);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(105, 23);
             this.label18.TabIndex = 9;
-            this.label18.Text = "      Tahap";
+            this.label18.Text = "      Komoditas";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label19
             // 
@@ -412,12 +671,13 @@
             this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Image = ((System.Drawing.Image)(resources.GetObject("label19.Image")));
             this.label19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label19.Location = new System.Drawing.Point(19, 212);
+            this.label19.Location = new System.Drawing.Point(19, 152);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(105, 23);
             this.label19.TabIndex = 8;
-            this.label19.Text = "      Rekom";
+            this.label19.Text = "      Tahap";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label20
             // 
@@ -426,12 +686,13 @@
             this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Image = ((System.Drawing.Image)(resources.GetObject("label20.Image")));
             this.label20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label20.Location = new System.Drawing.Point(19, 183);
+            this.label20.Location = new System.Drawing.Point(19, 123);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(105, 23);
             this.label20.TabIndex = 7;
             this.label20.Text = "      Lokasi";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label21
             // 
@@ -440,12 +701,13 @@
             this.label21.ForeColor = System.Drawing.Color.White;
             this.label21.Image = ((System.Drawing.Image)(resources.GetObject("label21.Image")));
             this.label21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label21.Location = new System.Drawing.Point(19, 154);
+            this.label21.Location = new System.Drawing.Point(19, 94);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(105, 23);
             this.label21.TabIndex = 6;
             this.label21.Text = "      Dokumen";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label22
             // 
@@ -454,41 +716,13 @@
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Image = ((System.Drawing.Image)(resources.GetObject("label22.Image")));
             this.label22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label22.Location = new System.Drawing.Point(19, 125);
+            this.label22.Location = new System.Drawing.Point(19, 65);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(105, 23);
             this.label22.TabIndex = 5;
             this.label22.Text = "      Bank";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label23
-            // 
-            this.label23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label23.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F);
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Image = ((System.Drawing.Image)(resources.GetObject("label23.Image")));
-            this.label23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label23.Location = new System.Drawing.Point(19, 96);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(105, 23);
-            this.label23.TabIndex = 4;
-            this.label23.Text = "      Jenis";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbJaminan
-            // 
-            this.lbJaminan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbJaminan.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbJaminan.ForeColor = System.Drawing.Color.White;
-            this.lbJaminan.Image = ((System.Drawing.Image)(resources.GetObject("lbJaminan.Image")));
-            this.lbJaminan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbJaminan.Location = new System.Drawing.Point(19, 67);
-            this.lbJaminan.Name = "lbJaminan";
-            this.lbJaminan.Size = new System.Drawing.Size(105, 23);
-            this.lbJaminan.TabIndex = 3;
-            this.lbJaminan.Text = "      Jaminan";
-            this.lbJaminan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbJaminan.Click += new System.EventHandler(this.lbJaminan_Click);
+            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // lbtnPerusahaan
             // 
@@ -549,6 +783,7 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "About";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -563,6 +798,7 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Home";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // bunifuGradientPanel1
             // 
@@ -577,32 +813,58 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 50;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(582, 706);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(798, 463);
             this.bunifuGradientPanel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Crimson;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1002, 43);
+            this.panel2.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1002, 46);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SISTEM INFORMASI GEOGRAFIS DINAS ESDM PROVINSI KEPULAUAN RIAU";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormMenuUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 749);
-            this.Controls.Add(this.SplitContainer1);
+            this.ClientSize = new System.Drawing.Size(1002, 506);
             this.Controls.Add(this.Panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormMenuUtama";
-            this.Text = "FormMenuUtama";
+            this.Text = "Menu Utama";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormMenuUtama_Load);
             this.Panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.SplitContainer1.Panel1.ResumeLayout(false);
             this.SplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer1)).EndInit();
             this.SplitContainer1.ResumeLayout(false);
             this.innerPanel1.ResumeLayout(false);
+            this.xPander2.ResumeLayout(false);
+            this.xPander1.ResumeLayout(false);
             this.xPander7.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.xPander8.ResumeLayout(false);
+            this.xPanderSumberDayaAir.ResumeLayout(false);
             this.xPander9.ResumeLayout(false);
             this.xPander10.ResumeLayout(false);
             this.xPander6.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -610,8 +872,6 @@
         #endregion
 
         public System.Windows.Forms.Panel Panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.SplitContainer SplitContainer1;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         internal System.Windows.Forms.Panel innerPanel1;
@@ -626,17 +886,38 @@
         private System.Windows.Forms.Label lbiupep;
         private System.Windows.Forms.Label lbtnWiup;
         private XPanderControl.XPander xPander10;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label lbJaminan;
         private System.Windows.Forms.Label lbtnPerusahaan;
         private XPanderControl.XPander xPander6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private XPanderControl.XPander xPander1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem hidrologiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tanjungpinangToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hodrologiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem daboToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tarempaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem telukButunToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ranaiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem natunaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.Label label19;
+        private XPanderControl.XPander xPanderSumberDayaAir;
+        private System.Windows.Forms.Label label6;
+        private XPanderControl.XPander xPander2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

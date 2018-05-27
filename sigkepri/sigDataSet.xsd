@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="sigDataSet" targetNamespace="http://tempuri.org/sigDataSet.xsd" xmlns:mstns="http://tempuri.org/sigDataSet.xsd" xmlns="http://tempuri.org/sigDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="sigConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sigConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.sigkepri.Properties.Settings.GlobalReference.Default.sigConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sigConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        w.idIzinPerusahaan, w.tglBerlaku, w.tglKadaluwarsa, TIMESTAMPDIFF(MONTH, CURDATE(), w.tglKadaluwarsa) AS masaBerlaku, w.cnc, p.namaPerusahaan, w.nomorSK, l.alamatLokasi, w.luasWilayahTambang, 
+                         w.luasWilayahPenunjang, bg.namaBahanGalian
+FROM            esdm_izin_perusahaan w INNER JOIN
+                         esdm_perusahaan p ON w.idPerusahaan = p.idPerusahaan INNER JOIN
+                         esdm_lokasi l ON w.idLokasi = l.idLokasi INNER JOIN
+                         esdm_bahan_galian bg ON w.idBahanGalian = bg.idBahanGalian
+ORDER BY w.idIzinPerusahaan DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idIzinPerusahaan" DataSetColumn="idIzinPerusahaan" />
+              <Mapping SourceColumn="nomorSK" DataSetColumn="nomorSK" />
+              <Mapping SourceColumn="tglBerlaku" DataSetColumn="tglBerlaku" />
+              <Mapping SourceColumn="tglKadaluwarsa" DataSetColumn="tglKadaluwarsa" />
+              <Mapping SourceColumn="luasWilayahTambang" DataSetColumn="luasWilayahTambang" />
+              <Mapping SourceColumn="luasWilayahPenunjang" DataSetColumn="luasWilayahPenunjang" />
+              <Mapping SourceColumn="cnc" DataSetColumn="cnc" />
+              <Mapping SourceColumn="alamatLokasi" DataSetColumn="alamatLokasi" />
+              <Mapping SourceColumn="masaBerlaku" DataSetColumn="masaBerlaku" />
+              <Mapping SourceColumn="namaPerusahaan" DataSetColumn="namaPerusahaan" />
+              <Mapping SourceColumn="namaBahanGalian" DataSetColumn="namaBahanGalian" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="sigConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByTahapAktif" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByTahapAktif" GeneratorSourceName="FillByTahapAktif" GetMethodModifier="Public" GetMethodName="GetDataByTahapAktif" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByTahapAktif" UserSourceName="FillByTahapAktif">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        w.idIzinPerusahaan, w.tglBerlaku, w.tglKadaluwarsa, TIMESTAMPDIFF(MONTH, CURDATE(), w.tglKadaluwarsa) AS masaBerlaku, w.cnc, p.namaPerusahaan, w.nomorSK, l.alamatLokasi, w.luasWilayahTambang, 
+                         w.luasWilayahPenunjang, bg.namaBahanGalian, esdm_tahap_kegiatan.namaTahapKegiatan
+FROM            esdm_izin_perusahaan w INNER JOIN
+                         esdm_perusahaan p ON w.idPerusahaan = p.idPerusahaan INNER JOIN
+                         esdm_lokasi l ON w.idLokasi = l.idLokasi INNER JOIN
+                         esdm_bahan_galian bg ON w.idBahanGalian = bg.idBahanGalian INNER JOIN
+                         esdm_tahap_kegiatan ON w.idTahapKegiatan = esdm_tahap_kegiatan.idTahapKegiatan
+WHERE        (w.idJenisPerizinan = 1) AND (TIMESTAMPDIFF(MONTH, CURDATE(), w.tglKadaluwarsa) &gt; 0) AND (esdm_tahap_kegiatan.namaTahapKegiatan = @namaTahapKegiatan)
+ORDER BY masaBerlaku</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="namaTahapKegiatan" ColumnName="namaTahapKegiatan" DataSourceName="sig.esdm_tahap_kegiatan" DataTypeServer="varchar(200)(200)" DbType="String" Direction="Input" ParameterName="@namaTahapKegiatan" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumn="namaTahapKegiatan" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="sigConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByTidakAktif" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByTidakAktif" GeneratorSourceName="FillByTidakAktif" GetMethodModifier="Public" GetMethodName="GetDataByTidakAktif" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByTidakAktif" UserSourceName="FillByTidakAktif">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        w.idIzinPerusahaan, w.tglBerlaku, w.tglKadaluwarsa, TIMESTAMPDIFF(MONTH, CURDATE(), w.tglKadaluwarsa) AS masaBerlaku, w.cnc, p.namaPerusahaan, w.nomorSK, l.alamatLokasi, w.luasWilayahTambang, 
+                         w.luasWilayahPenunjang, bg.namaBahanGalian, esdm_tahap_kegiatan.namaTahapKegiatan
+FROM            esdm_izin_perusahaan w INNER JOIN
+                         esdm_perusahaan p ON w.idPerusahaan = p.idPerusahaan INNER JOIN
+                         esdm_lokasi l ON w.idLokasi = l.idLokasi INNER JOIN
+                         esdm_bahan_galian bg ON w.idBahanGalian = bg.idBahanGalian INNER JOIN
+                         esdm_tahap_kegiatan ON w.idTahapKegiatan = esdm_tahap_kegiatan.idTahapKegiatan
+WHERE        (w.idJenisPerizinan = 1) AND (TIMESTAMPDIFF(MONTH, CURDATE(), w.tglKadaluwarsa) &lt;= 0) AND (esdm_tahap_kegiatan.namaTahapKegiatan = @namaTahapKegiatan)
+ORDER BY masaBerlaku</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="namaTahapKegiatan" ColumnName="namaTahapKegiatan" DataSourceName="sig.esdm_tahap_kegiatan" DataTypeServer="varchar(200)(200)" DbType="String" Direction="Input" ParameterName="@namaTahapKegiatan" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumn="namaTahapKegiatan" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableWiupTableAdapter" GeneratorDataComponentClassName="DataTableWiupTableAdapter" Name="DataTableWiup" UserDataComponentName="DataTableWiupTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sigConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        w.idWiup, p.namaPerusahaan, w.noIzin, w.tglIzin, l.alamatLokasi, w.luas, bg.namaBahanGalian
+FROM            esdm_wiup w INNER JOIN
+                         esdm_perusahaan p ON w.idPerusahaan = p.idPerusahaan INNER JOIN
+                         esdm_lokasi l ON w.idLokasi = l.idLokasi INNER JOIN
+                         esdm_bahan_galian bg ON w.idBahanGalian = bg.idBahanGalian
+ORDER BY w.idWiup DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idWiup" DataSetColumn="idWiup" />
+              <Mapping SourceColumn="namaPerusahaan" DataSetColumn="namaPerusahaan" />
+              <Mapping SourceColumn="noIzin" DataSetColumn="noIzin" />
+              <Mapping SourceColumn="tglIzin" DataSetColumn="tglIzin" />
+              <Mapping SourceColumn="alamatLokasi" DataSetColumn="alamatLokasi" />
+              <Mapping SourceColumn="luas" DataSetColumn="luas" />
+              <Mapping SourceColumn="namaBahanGalian" DataSetColumn="namaBahanGalian" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="sigDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="sigDataSet" msprop:Generator_UserDSName="sigDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idIzinPerusahaan" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidIzinPerusahaan" msprop:Generator_ColumnPropNameInRow="idIzinPerusahaan" msprop:Generator_ColumnPropNameInTable="idIzinPerusahaanColumn" msprop:Generator_UserColumnName="idIzinPerusahaan" type="xs:int" />
+              <xs:element name="nomorSK" msprop:Generator_ColumnVarNameInTable="columnnomorSK" msprop:Generator_ColumnPropNameInRow="nomorSK" msprop:Generator_ColumnPropNameInTable="nomorSKColumn" msprop:Generator_UserColumnName="nomorSK" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tglBerlaku" msprop:Generator_ColumnVarNameInTable="columntglBerlaku" msprop:Generator_ColumnPropNameInRow="tglBerlaku" msprop:Generator_ColumnPropNameInTable="tglBerlakuColumn" msprop:Generator_UserColumnName="tglBerlaku" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="tglKadaluwarsa" msprop:Generator_ColumnVarNameInTable="columntglKadaluwarsa" msprop:Generator_ColumnPropNameInRow="tglKadaluwarsa" msprop:Generator_ColumnPropNameInTable="tglKadaluwarsaColumn" msprop:Generator_UserColumnName="tglKadaluwarsa" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="luasWilayahTambang" msprop:Generator_ColumnVarNameInTable="columnluasWilayahTambang" msprop:Generator_ColumnPropNameInRow="luasWilayahTambang" msprop:Generator_ColumnPropNameInTable="luasWilayahTambangColumn" msprop:Generator_UserColumnName="luasWilayahTambang" type="xs:float" minOccurs="0" />
+              <xs:element name="luasWilayahPenunjang" msprop:Generator_ColumnVarNameInTable="columnluasWilayahPenunjang" msprop:Generator_ColumnPropNameInRow="luasWilayahPenunjang" msprop:Generator_ColumnPropNameInTable="luasWilayahPenunjangColumn" msprop:Generator_UserColumnName="luasWilayahPenunjang" type="xs:float" minOccurs="0" />
+              <xs:element name="cnc" msprop:Generator_ColumnVarNameInTable="columncnc" msprop:Generator_ColumnPropNameInRow="cnc" msprop:Generator_ColumnPropNameInTable="cncColumn" msprop:Generator_UserColumnName="cnc" type="xs:int" minOccurs="0" />
+              <xs:element name="alamatLokasi" msprop:Generator_ColumnVarNameInTable="columnalamatLokasi" msprop:Generator_ColumnPropNameInRow="alamatLokasi" msprop:Generator_ColumnPropNameInTable="alamatLokasiColumn" msprop:Generator_UserColumnName="alamatLokasi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="masaBerlaku" msprop:Generator_ColumnVarNameInTable="columnmasaBerlaku" msprop:Generator_ColumnPropNameInRow="masaBerlaku" msprop:Generator_ColumnPropNameInTable="masaBerlakuColumn" msprop:Generator_UserColumnName="masaBerlaku" type="xs:long" minOccurs="0" />
+              <xs:element name="namaPerusahaan" msprop:Generator_ColumnVarNameInTable="columnnamaPerusahaan" msprop:Generator_ColumnPropNameInRow="namaPerusahaan" msprop:Generator_ColumnPropNameInTable="namaPerusahaanColumn" msprop:Generator_UserColumnName="namaPerusahaan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="namaBahanGalian" msprop:Generator_ColumnVarNameInTable="columnnamaBahanGalian" msprop:Generator_ColumnPropNameInRow="namaBahanGalian" msprop:Generator_ColumnPropNameInTable="namaBahanGalianColumn" msprop:Generator_UserColumnName="namaBahanGalian" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTableWiup" msprop:Generator_TableClassName="DataTableWiupDataTable" msprop:Generator_TableVarName="tableDataTableWiup" msprop:Generator_TablePropName="DataTableWiup" msprop:Generator_RowDeletingName="DataTableWiupRowDeleting" msprop:Generator_RowChangingName="DataTableWiupRowChanging" msprop:Generator_RowEvHandlerName="DataTableWiupRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableWiupRowDeleted" msprop:Generator_UserTableName="DataTableWiup" msprop:Generator_RowChangedName="DataTableWiupRowChanged" msprop:Generator_RowEvArgName="DataTableWiupRowChangeEvent" msprop:Generator_RowClassName="DataTableWiupRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idWiup" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidWiup" msprop:Generator_ColumnPropNameInRow="idWiup" msprop:Generator_ColumnPropNameInTable="idWiupColumn" msprop:Generator_UserColumnName="idWiup" type="xs:int" />
+              <xs:element name="namaPerusahaan" msprop:Generator_ColumnVarNameInTable="columnnamaPerusahaan" msprop:Generator_ColumnPropNameInRow="namaPerusahaan" msprop:Generator_ColumnPropNameInTable="namaPerusahaanColumn" msprop:Generator_UserColumnName="namaPerusahaan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="noIzin" msprop:Generator_ColumnVarNameInTable="columnnoIzin" msprop:Generator_ColumnPropNameInRow="noIzin" msprop:Generator_ColumnPropNameInTable="noIzinColumn" msprop:Generator_UserColumnName="noIzin" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tglIzin" msprop:Generator_ColumnVarNameInTable="columntglIzin" msprop:Generator_ColumnPropNameInRow="tglIzin" msprop:Generator_ColumnPropNameInTable="tglIzinColumn" msprop:Generator_UserColumnName="tglIzin" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="alamatLokasi" msprop:Generator_ColumnVarNameInTable="columnalamatLokasi" msprop:Generator_ColumnPropNameInRow="alamatLokasi" msprop:Generator_ColumnPropNameInTable="alamatLokasiColumn" msprop:Generator_UserColumnName="alamatLokasi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="luas" msprop:Generator_ColumnVarNameInTable="columnluas" msprop:Generator_ColumnPropNameInRow="luas" msprop:Generator_ColumnPropNameInTable="luasColumn" msprop:Generator_UserColumnName="luas" type="xs:float" minOccurs="0" />
+              <xs:element name="namaBahanGalian" msprop:Generator_ColumnVarNameInTable="columnnamaBahanGalian" msprop:Generator_ColumnPropNameInRow="namaBahanGalian" msprop:Generator_ColumnPropNameInTable="namaBahanGalianColumn" msprop:Generator_UserColumnName="namaBahanGalian" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:idIzinPerusahaan" />
+    </xs:unique>
+    <xs:unique name="DataTableWiup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTableWiup" />
+      <xs:field xpath="mstns:idWiup" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

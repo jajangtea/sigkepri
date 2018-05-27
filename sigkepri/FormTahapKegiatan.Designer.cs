@@ -189,7 +189,7 @@
             this.NamaTahapKegiatanTextBox.Name = "NamaTahapKegiatanTextBox";
             this.NamaTahapKegiatanTextBox.Size = new System.Drawing.Size(369, 33);
             this.NamaTahapKegiatanTextBox.TabIndex = 32;
-            this.NamaTahapKegiatanTextBox.Text = "Nama Rekomendasi";
+            this.NamaTahapKegiatanTextBox.Text = "Tahap Kegiatan";
             this.NamaTahapKegiatanTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // FormTahapKegiatan
@@ -207,6 +207,7 @@
             this.Name = "FormTahapKegiatan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTahapKegiatan";
+            this.Load += new System.EventHandler(this.FormTahapKegiatan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();

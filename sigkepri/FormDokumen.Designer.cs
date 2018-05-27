@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDokumen));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Label3 = new System.Windows.Forms.Label();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.btnHapus = new System.Windows.Forms.Button();
@@ -40,6 +42,12 @@
             this.Label1 = new System.Windows.Forms.Label();
             this.NamaDokumenTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.dgvList = new System.Windows.Forms.DataGridView();
+            this.cbbJenisDokumen = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.idDokumen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaDokumen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jenisDokumen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
@@ -84,6 +92,7 @@
             this.btnHapus.TabIndex = 1;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = false;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btnTambah
             // 
@@ -98,6 +107,7 @@
             this.btnTambah.TabIndex = 0;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.UseVisualStyleBackColor = false;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
             // btnEdit
             // 
@@ -112,6 +122,7 @@
             this.btnEdit.TabIndex = 0;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // PictureBox1
             // 
@@ -143,10 +154,11 @@
             this.btnSimpan.ForeColor = System.Drawing.Color.White;
             this.btnSimpan.Location = new System.Drawing.Point(278, 349);
             this.btnSimpan.Name = "btnSimpan";
-            this.btnSimpan.Size = new System.Drawing.Size(371, 30);
+            this.btnSimpan.Size = new System.Drawing.Size(458, 30);
             this.btnSimpan.TabIndex = 34;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = false;
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
             // Label1
             // 
@@ -165,16 +177,16 @@
             this.NamaDokumenTextBox.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NamaDokumenTextBox.ForeColor = System.Drawing.Color.Black;
             this.NamaDokumenTextBox.HintForeColor = System.Drawing.Color.Black;
-            this.NamaDokumenTextBox.HintText = "Nama Dokumen";
+            this.NamaDokumenTextBox.HintText = "";
             this.NamaDokumenTextBox.isPassword = false;
             this.NamaDokumenTextBox.LineFocusedColor = System.Drawing.Color.Crimson;
             this.NamaDokumenTextBox.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(104)))), ((int)(((byte)(116)))));
             this.NamaDokumenTextBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(104)))), ((int)(((byte)(116)))));
             this.NamaDokumenTextBox.LineThickness = 2;
-            this.NamaDokumenTextBox.Location = new System.Drawing.Point(279, 36);
+            this.NamaDokumenTextBox.Location = new System.Drawing.Point(279, 51);
             this.NamaDokumenTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NamaDokumenTextBox.Name = "NamaDokumenTextBox";
-            this.NamaDokumenTextBox.Size = new System.Drawing.Size(369, 33);
+            this.NamaDokumenTextBox.Size = new System.Drawing.Size(457, 33);
             this.NamaDokumenTextBox.TabIndex = 32;
             this.NamaDokumenTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -183,20 +195,100 @@
             this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AllowUserToDeleteRows = false;
             this.dgvList.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Location = new System.Drawing.Point(278, 76);
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDokumen,
+            this.namaDokumen,
+            this.jenisDokumen});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvList.Location = new System.Drawing.Point(278, 141);
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvList.Size = new System.Drawing.Size(371, 266);
+            this.dgvList.Size = new System.Drawing.Size(458, 201);
             this.dgvList.TabIndex = 33;
+            this.dgvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellClick);
+            this.dgvList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvList_RowPostPaint);
+            // 
+            // cbbJenisDokumen
+            // 
+            this.cbbJenisDokumen.BackColor = System.Drawing.Color.White;
+            this.cbbJenisDokumen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbJenisDokumen.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbJenisDokumen.FormattingEnabled = true;
+            this.cbbJenisDokumen.Location = new System.Drawing.Point(278, 110);
+            this.cbbJenisDokumen.Name = "cbbJenisDokumen";
+            this.cbbJenisDokumen.Size = new System.Drawing.Size(458, 25);
+            this.cbbJenisDokumen.TabIndex = 47;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(280, 92);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 15);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Jenis Dokumen";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(280, 41);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 15);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "Nama Dokumen";
+            // 
+            // idDokumen
+            // 
+            this.idDokumen.DataPropertyName = "idDokumen";
+            this.idDokumen.HeaderText = "idDokumen";
+            this.idDokumen.Name = "idDokumen";
+            this.idDokumen.ReadOnly = true;
+            this.idDokumen.Visible = false;
+            // 
+            // namaDokumen
+            // 
+            this.namaDokumen.DataPropertyName = "namaDokumen";
+            this.namaDokumen.HeaderText = "Nama Dokumen";
+            this.namaDokumen.Name = "namaDokumen";
+            this.namaDokumen.ReadOnly = true;
+            this.namaDokumen.Width = 180;
+            // 
+            // jenisDokumen
+            // 
+            this.jenisDokumen.DataPropertyName = "namaJenisDokumen";
+            this.jenisDokumen.HeaderText = "Jenis Dokumen";
+            this.jenisDokumen.Name = "jenisDokumen";
+            this.jenisDokumen.ReadOnly = true;
+            this.jenisDokumen.Width = 200;
             // 
             // FormDokumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(651, 387);
+            this.ClientSize = new System.Drawing.Size(742, 387);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cbbJenisDokumen);
             this.Controls.Add(this.Panel1);
             this.Controls.Add(this.btnSimpan);
             this.Controls.Add(this.Label1);
@@ -205,7 +297,8 @@
             this.MaximizeBox = false;
             this.Name = "FormDokumen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormDokumen";
+            this.Text = "Dokumen";
+            this.Load += new System.EventHandler(this.FormDokumen_Load);
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
@@ -228,5 +321,11 @@
         internal System.Windows.Forms.Label Label1;
         internal Bunifu.Framework.UI.BunifuMaterialTextbox NamaDokumenTextBox;
         internal System.Windows.Forms.DataGridView dgvList;
+        internal System.Windows.Forms.ComboBox cbbJenisDokumen;
+        internal System.Windows.Forms.Label label7;
+        internal System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDokumen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namaDokumen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jenisDokumen;
     }
 }

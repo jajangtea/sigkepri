@@ -26,6 +26,7 @@ namespace sigkepri
             if (!Stuff.PingNetwork("pingtest.com"))
             {
                 gmap.Manager.Mode = AccessMode.CacheOnly;
+                gmap.CacheLocation = "C:\\cache";
                 MessageBox.Show("No internet connection available, going to CacheOnly mode.", "GMap.NET - Demo.WindowsForms", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -104,13 +105,20 @@ namespace sigkepri
 
         public void tampilPenanda(string nama)
         {
-            GMapOverlay markersOverlay = new GMapOverlay("markers");
             List<PointLatLng> points = new List<PointLatLng>();
             List<string>[] list;
             list = dbConnect.selectPenandaDetil(nama);
-           
+
+
             for (int i = 0; i < list[0].Count; i++)
             {
+
+                GMapOverlay markersOverlay = new GMapOverlay("markers");
+                gmap.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
+                GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
+                gmap.CacheLocation = "C:\\cache";
+                gmap.Position = new PointLatLng(Convert.ToDouble(list[1][i]), Convert.ToDouble(list[2][i]));
+
                 marker = new GMarkerGoogle(new PointLatLng(Convert.ToDouble(list[1][i]), Convert.ToDouble(list[2][i])), new Bitmap(Properties.Resources.Marker_16px));
                 marker.ToolTipText = list[0][i];
                 marker.ToolTip.Fill = Brushes.Crimson;
@@ -130,9 +138,7 @@ namespace sigkepri
 
         public void gambarpolygon(string nama)
         {
-            gmap.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
-            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
-            gmap.Position = new PointLatLng(1.082828, 104.030457);
+           
 
             GMapOverlay polyOverlay = new GMapOverlay("polygons");
             List<PointLatLng> points = new List<PointLatLng>();
@@ -153,8 +159,13 @@ namespace sigkepri
         }
         private void FormRekap_Load(object sender, EventArgs e)
         {
-            backgroundWorker1.RunWorkerAsync();
-            Control.CheckForIllegalCrossThreadCalls = false;
+            gmap.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
+            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
+            gmap.CacheLocation = "C:\\cache";
+            gmap.Position = new PointLatLng(1.082828, 104.030457);
+            xPanderSumberDaya.Collapse();
+            xPanderCadangan.Collapse();
+            xPanderDokumen.Collapse();
         }
 
         private void dgvKordinat_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -183,11 +194,12 @@ namespace sigkepri
         public void sumberDayaChart(string nama)
         {
             dbConnect.OpenConnection();
-            dbConnect.cmd = new MySqlCommand("SELECT * FROM esdm_sumber_daya sd  " +
+            string sql = "SELECT * FROM esdm_sumber_daya sd  " +
                 "INNER JOIN esdm_izin_perusahaan ip ON  sd.idIzinPerusahaan = ip.idIzinPerusahaan  " +
                 "INNER JOIN esdm_perusahaan ep ON ip.idPerusahaan = ep.idPerusahaan   " +
-                " where ep.namaPerusahaan = '" + nama + "'"
-                , dbConnect.connection);
+                " where ep.namaPerusahaan = '" + nama + "'";
+            Debug.WriteLine(sql);
+            dbConnect.cmd = new MySqlCommand(sql, dbConnect.connection);
             MySqlDataReader mydatareader;
             try
             {
@@ -279,18 +291,34 @@ namespace sigkepri
                 dbConnect.CloseConnection();
             }
 
+        public void tampildataDokumen(string nama)
+        {
+            MySqlCommand cmdDokumen;
+            MySqlDataAdapter tampilDokumen;
+            DataSet dsdokumen = new DataSet();
+            DataTable dtDokumen = new DataTable();
+
+            string sqlTampil = "select el.idIzinDokumen,id.namaDokumen,jd.namaJenisDokumen,el.nomorDokumen from esdm_izin_perusahaan ew " +
+                  "inner join esdm_perusahaan ep on ew.idPerusahaan=ep.idPerusahaan " +
+                  "inner join esdm_izin_dokumen el on ew.idIzinPerusahaan=el.idIzinPerusahaan " +
+                  "inner join esdm_dokumen id on el.idDokumen=id.idDokumen " +
+                  "inner join esdm_jenis_dokumen jd on id.idJenisDokumen=jd.idJenisDokumen " +
+                  "where  ep.namaPerusahaan='" + nama + "'";
+            Debug.Print(sqlTampil);
+            dbConnect.OpenConnection();
+            dbConnect.cmd = new MySqlCommand(sqlTampil, dbConnect.connection);
+            dbConnect.tampil = new MySqlDataAdapter(dbConnect.cmd);
+            dbConnect.ds.Clear();
+            dbConnect.tampil.Fill(dbConnect.ds);
+            dataGridView1.DataSource = dbConnect.ds.Tables[0];
+            dbConnect.CloseConnection();
+        }
+
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
             gmap.Zoom = trackBar1.Value / 100.0;
         }
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            gmap.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
-            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
-            gmap.Position = new PointLatLng(1.082828, 104.030457);
-            xPanderCadangan.Collapse();
-            xPanderDokumen.Collapse();
-        }
+      
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using sigkepri.FormReporting;
 
 namespace sigkepri
 {
@@ -15,7 +16,7 @@ namespace sigkepri
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenuUtama());
+            Application.Run(new FormDashboard());
         }
     }
 }
